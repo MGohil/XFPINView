@@ -133,7 +133,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\XFPINLoginSample\XFPINLoginSample.csproj">
-      <Project>{4A35FF83-FEFC-4B73-8A15-6AA3C9E8D4F8}</Project>
+      <Project>{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}</Project>
       <Name>XFPINLoginSample</Name>
     </ProjectReference>
   </ItemGroup>
