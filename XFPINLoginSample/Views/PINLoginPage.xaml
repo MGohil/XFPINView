@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="XFPINLoginSample.Views.PINLoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:pinview="clr-namespace:XFPINView;assembly=XFPINView"
+    xmlns:vm="clr-namespace:XFPINLoginSample.ViewModels"
+    Title="PIN Login"
+    ios:Page.UseSafeArea="true">
+    <ContentPage.BindingContext>
+        <vm:PINLoginPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="20,40,20,20" Spacing="15">
+            <Label
+                Margin="0,40,0,0"
+                HorizontalTextAlignment="Center"
+                Text="Please enter your PIN" />
+
+            <pinview:PINEntryControl
+                PINEntryCompletedCommand="{Binding PINEntryCompletedCommand}"
+                PINValue="{Binding PIN}"
+                Style="{StaticResource PINEntryControlStyle}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

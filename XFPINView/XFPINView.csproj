@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>XFPINView</PackageId>
+    <Authors>Milan Gohil</Authors>
+    <Owners>Milan Gohil</Owners>
+    <Summary>PIN Entry Control for Xamarin.Forms</Summary>
+    <PackageTags>PIN, MPIN, PIN Entry, PIN View, Xamarin.Forms, Xamarin</PackageTags>
+    <Title>XFPINView</Title>
+    <Description>XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile MPIN entry.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.772" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExtendedProperties\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+</Project>
