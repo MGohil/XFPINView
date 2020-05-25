@@ -10,6 +10,9 @@
     <PackageTags>PIN, MPIN, PIN Entry, PIN View, Xamarin.Forms, Xamarin</PackageTags>
     <Title>XFPINView</Title>
     <Description>XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile MPIN entry.</Description>
+    <PackageVersion>1.0.1</PackageVersion>
+    <PackageProjectUrl>https://github.com/MGohil/XFPINView</PackageProjectUrl>
+    <PackageReleaseNotes>Added one more peoperty</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">

@@ -62,6 +62,7 @@
             <Setter Property="BoxShape" Value="Circle" />
             <Setter Property="PINLength" Value="{x:Static local:App.PINLength}" />
             <Setter Property="Color" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BoxBackgroundColor" Value="{DynamicResource PrimaryLightColor}" />
         </Style>
     </Application.Resources>
 </Application>
