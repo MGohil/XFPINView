@@ -14,7 +14,8 @@ This control can be used for Crete New PIN, Change PIN screen in your mobile app
 <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Android.png" width="600">
 
 ## Properties
-### 1. BoxShape (Defines a shape of PIN Boxes)
+### 1. BoxShape
+Defines a shape of PIN Boxes. There are 3 pre-defined shapes available:
 - Squere
 - RoundCorner
 - Circle
@@ -25,7 +26,8 @@ This control can be used for Crete New PIN, Change PIN screen in your mobile app
 ```
 <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxShapes.png" width="400">
 
-### 2. Color (Defines a color of Border and Dots of PIN Boxes)
+### 2. Color
+Defines a color of Borders and Dots of each PIN Box
 ```
 <xfpinview:PINView 
     Color="Red" 
@@ -33,10 +35,29 @@ This control can be used for Crete New PIN, Change PIN screen in your mobile app
 ```
 <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Color.png" width="200">
 
-### 3. PINLength (Defines the Length of PIN your app supports)
+### 3. PINLength
+Defines the Length of PIN your app supports
 ```
 <xfpinview:PINView 
     PINLength="5" 
     PINValue="{Binding PIN}" />
 ```
 <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-PINLength.png" width="250">
+
+### 4. PINValue
+The Bindable PIN value user enters as an input
+```
+<xfpinview:PINView 
+    PINLength="5" 
+    PINValue="{Binding PIN}" />
+```
+
+### 5. BoxSize
+Defines the Width and Height of each PIN Box
+```
+<xfpinview:PINView
+    BoxSize="50"
+    PINLength="5" 
+    PINValue="{Binding PIN}" />
+```
+<img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSize.png" width="400">
