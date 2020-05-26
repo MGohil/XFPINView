@@ -9,6 +9,7 @@ namespace XFPINLoginSample.ViewModels
     {
         public PINLoginPageViewModel()
         {
+            Title = "PIN Login";
             PINEntryCompletedCommand = new Command<string>(PINEntryCompletedCommandExecute);
         }
 

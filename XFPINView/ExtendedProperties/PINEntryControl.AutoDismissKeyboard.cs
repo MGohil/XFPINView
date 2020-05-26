@@ -2,7 +2,7 @@
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// Set true if you want to dismiss the soft keyboard, when PIN entry is completed
@@ -17,7 +17,7 @@ namespace XFPINView
           BindableProperty.Create(
               nameof(AutoDismissKeyboard),
               typeof(bool),
-              typeof(PINEntryControl),
+              typeof(PINView),
               false,
               defaultBindingMode: BindingMode.OneWay);
     }

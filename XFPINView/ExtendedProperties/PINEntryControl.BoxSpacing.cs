@@ -3,7 +3,7 @@ using XFPINView.Helpers;
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// Gets or Sets the Space among the PIN Boxes
@@ -18,7 +18,7 @@ namespace XFPINView
           BindableProperty.Create(
               nameof(BoxSpacing),
               typeof(double),
-              typeof(PINEntryControl),
+              typeof(PINView),
               Constants.DefaultBoxSpacing,
               defaultBindingMode: BindingMode.OneWay,
               propertyChanged: BoxSpacingPropertyChanged);
@@ -30,7 +30,7 @@ namespace XFPINView
                 return;
             }
 
-            var control = ((PINEntryControl)bindable);
+            var control = ((PINView)bindable);
 
             control.PINBoxContainer.Spacing = (double)newValue;
         }

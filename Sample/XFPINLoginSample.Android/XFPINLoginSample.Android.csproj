@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFPINLoginSample\XFPINLoginSample.csproj">
-      <Project>{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}</Project>
+      <Project>{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}</Project>
       <Name>XFPINLoginSample</Name>
     </ProjectReference>
   </ItemGroup>

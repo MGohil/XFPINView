@@ -11,7 +11,7 @@ namespace XFPINLoginSample.Views
             NavigationPage.SetBackButtonTitle(this, string.Empty);
         }
 
-        void PINEntryControl_PINEntryCompleted(System.Object sender, PINCompletedEventArgs e)
+        void PINView_PINEntryCompleted(System.Object sender, PINCompletedEventArgs e)
         {
             Application.Current.MainPage.DisplayAlert("Message", $"PIN Entered {e.PIN}", "OK");
         }

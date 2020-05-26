@@ -8,6 +8,8 @@ namespace XFPINLoginSample.ViewModels
     {
         public MainPageViewModel()
         {
+            Title = "PIN Samples";
+
             GoToPINLoginPageCommand = new Command(GoToPINLoginPageCommandExecute);
             GoToCreatePINPageCommand = new Command(GoToCreatePINPageCommandExecute);
             GoToChangePINPageCommand = new Command(GoToChangePINPageCommandExecute);

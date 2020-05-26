@@ -7,8 +7,8 @@ namespace XFPINLoginSample.Views
         public ChangePINPage()
         {
             InitializeComponent();
-            existingPINEntryControl.PINEntryCompleted += delegate { newPINEntryControl.FocusBox(); };
-            newPINEntryControl.PINEntryCompleted += delegate { confirmPINEntryControl.FocusBox(); };
+            existingPINView.PINEntryCompleted += delegate { newPINView.FocusBox(); };
+            newPINView.PINEntryCompleted += delegate { confirmPINView.FocusBox(); };
         }
     }
 }

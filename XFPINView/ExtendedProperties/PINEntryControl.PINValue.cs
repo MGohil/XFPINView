@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// Gets or Sets the PIN value.
@@ -19,7 +19,7 @@ namespace XFPINView
            BindableProperty.Create(
                nameof(PINValue),
                typeof(string),
-               typeof(PINEntryControl),
+               typeof(PINView),
                string.Empty,
                defaultBindingMode: BindingMode.TwoWay,
                propertyChanged: PINValuePropertyChanged);
@@ -28,11 +28,11 @@ namespace XFPINView
         {
             try
             {
-                var control = (PINEntryControl)bindable;
+                var control = (PINView)bindable;
                 var boxes = control.PINBoxContainer.Children;
 
                 string pin = Convert.ToString(newValue);
-                ((PINEntryControl)bindable).hiddenTextEntry.Text = pin;
+                ((PINView)bindable).hiddenTextEntry.Text = pin;
 
                 int length = pin.Length;
 

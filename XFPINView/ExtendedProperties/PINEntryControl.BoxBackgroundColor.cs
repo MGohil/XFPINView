@@ -3,7 +3,7 @@ using Xamarin.Forms.Internals;
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// Gets or Sets the Background color of the PIN Box.
@@ -18,14 +18,14 @@ namespace XFPINView
           BindableProperty.Create(
               nameof(BoxBackgroundColor),
               typeof(Color),
-              typeof(PINEntryControl),
+              typeof(PINView),
               Color.Transparent,
               defaultBindingMode: BindingMode.OneWay,
               propertyChanged: BoxBackgroundColorPropertyChanged);
 
         private static void BoxBackgroundColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            ((PINEntryControl)bindable).PINBoxContainer.Children.ForEach(x =>
+            ((PINView)bindable).PINBoxContainer.Children.ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;
                 boxTemplate.Box.BackgroundColor = (Color)newValue;

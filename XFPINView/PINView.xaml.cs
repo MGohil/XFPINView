@@ -5,7 +5,7 @@ using XFPINView.Helpers;
 
 namespace XFPINView
 {
-    public partial class PINEntryControl : ContentView
+    public partial class PINView : ContentView
     {
         #region Fields
         /// <summary>
@@ -22,11 +22,11 @@ namespace XFPINView
         #endregion
 
         #region Constructor and Initializations
-        public PINEntryControl()
+        public PINView()
         {
             InitializeComponent();
 
-            hiddenTextEntry.TextChanged += PINEntryControl_TextChanged;
+            hiddenTextEntry.TextChanged += PINView_TextChanged;
             boxTapGestureRecognizer = new TapGestureRecognizer() { Command = new Command(() => { BoxTapCommandExecute(); }) };
 
             CreateControl();
@@ -45,7 +45,7 @@ namespace XFPINView
 
         #region Methods
         /// <summary>
-        /// Initializes the UI for the PINEntryControl
+        /// Initializes the UI for the PINView
         /// </summary>
         public void CreateControl()
         {
@@ -117,7 +117,7 @@ namespace XFPINView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PINEntryControl_TextChanged(object sender, TextChangedEventArgs e)
+        private void PINView_TextChanged(object sender, TextChangedEventArgs e)
         {
             PINValue = e.NewTextValue;
 
@@ -137,7 +137,7 @@ namespace XFPINView
 
         #region Commands and Executes
         /// <summary>
-        /// Invokes when user tap on the PINEntryControl, this will bring up the soft keyboard
+        /// Invokes when user tap on the PINView, this will bring up the soft keyboard
         /// </summary>
         private async void BoxTapCommandExecute()
         {

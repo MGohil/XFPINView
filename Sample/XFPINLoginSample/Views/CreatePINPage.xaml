@@ -4,8 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    xmlns:pinview="clr-namespace:XFPINView;assembly=XFPINView"
     xmlns:vm="clr-namespace:XFPINLoginSample.ViewModels"
+    xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView"
     Title="{Binding Title}"
     ios:Page.UseSafeArea="true">
     <ContentPage.BindingContext>
@@ -22,10 +22,10 @@
             <!--  New PIN Entry Box  -->
             <StackLayout Grid.Row="0" Spacing="15">
                 <Label HorizontalTextAlignment="Center" Text="Enter new PIN" />
-                <pinview:PINEntryControl
-                    x:Name="newPINEntryControl"
+                <xfpinview:PINView
+                    x:Name="newPINView"
                     PINValue="{Binding NewPIN}"
-                    Style="{StaticResource PINEntryControlStyle}" />
+                    Style="{StaticResource PINViewStyle}" />
             </StackLayout>
 
             <!--  Confirm PIN Entry Box  -->
@@ -34,11 +34,11 @@
                 Margin="0,40,0,0"
                 Spacing="15">
                 <Label HorizontalTextAlignment="Center" Text="Confirm PIN" />
-                <pinview:PINEntryControl
-                    x:Name="confirmPINEntryControl"
+                <xfpinview:PINView
+                    x:Name="confirmPINView"
                     AutoDismissKeyboard="True"
                     PINValue="{Binding ConfirmPIN}"
-                    Style="{StaticResource PINEntryControlStyle}" />
+                    Style="{StaticResource PINViewStyle}" />
             </StackLayout>
 
             <!--  SAVE Button  -->

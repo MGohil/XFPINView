@@ -3,7 +3,7 @@ using XFPINView.Helpers;
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// Gets or Sets the Length of the PIN.
@@ -19,7 +19,7 @@ namespace XFPINView
           BindableProperty.Create(
               nameof(PINLength),
               typeof(int),
-              typeof(PINEntryControl),
+              typeof(PINView),
               Constants.DefaultPINLength,
               defaultBindingMode: BindingMode.OneWay,
               propertyChanged: PINLengthPropertyChanged);
@@ -31,7 +31,7 @@ namespace XFPINView
                 return;
             }
 
-           ((PINEntryControl)bindable).CreateControl();
+           ((PINView)bindable).CreateControl();
         }
     }
 }

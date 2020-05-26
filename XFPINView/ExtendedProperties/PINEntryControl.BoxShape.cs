@@ -4,7 +4,7 @@ using XFPINView.Helpers;
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// Gets or Sets the Shape of the PIN Box from BoxShapeType enum:
@@ -24,14 +24,14 @@ namespace XFPINView
            BindableProperty.Create(
                nameof(BoxShape),
                typeof(BoxShapeType),
-               typeof(PINEntryControl),
+               typeof(PINView),
                 BoxShapeType.RoundCorner,
                defaultBindingMode: BindingMode.OneWay,
                propertyChanged: BoxShapePropertyChanged);
 
         private static void BoxShapePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = ((PINEntryControl)bindable);
+            var control = ((PINView)bindable);
 
             control.PINBoxContainer.Children.ForEach(x =>
             {

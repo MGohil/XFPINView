@@ -4,7 +4,7 @@ using XFPINView.Helpers;
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// Gets or Sets the Height / Width of each PIN Box.
@@ -22,7 +22,7 @@ namespace XFPINView
           BindableProperty.Create(
               nameof(BoxSize),
               typeof(double),
-              typeof(PINEntryControl),
+              typeof(PINView),
               Constants.DefaultBoxSize,
               defaultBindingMode: BindingMode.OneWay,
               propertyChanged: BoxSizePropertyChanged);
@@ -34,7 +34,7 @@ namespace XFPINView
                 return;
             }
 
-            var control = ((PINEntryControl)bindable);
+            var control = ((PINView)bindable);
 
             control.PINBoxContainer.Children.ForEach(x =>
             {

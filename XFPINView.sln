@@ -5,11 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFPINView", "XFPINView\XFPI
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{C1243850-59CA-4CD8-B73F-67DECE21F10D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFPINLoginSample", "Sample\XFPINLoginSample\XFPINLoginSample.csproj", "{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFPINLoginSample.iOS", "Sample\XFPINLoginSample.iOS\XFPINLoginSample.iOS.csproj", "{D6BD36AC-5908-43E5-9199-DD662FF3D717}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFPINLoginSample.Android", "Sample\XFPINLoginSample.Android\XFPINLoginSample.Android.csproj", "{59B57E59-5A34-44F2-8209-EC49D89EB22A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFPINLoginSample", "Sample\XFPINLoginSample\XFPINLoginSample.csproj", "{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,6 @@ Global
 		{47685D55-A0F8-4945-9ADF-9AC1BB591516}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{47685D55-A0F8-4945-9ADF-9AC1BB591516}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{47685D55-A0F8-4945-9ADF-9AC1BB591516}.Release|iPhone.Build.0 = Release|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3}.Release|iPhone.Build.0 = Release|Any CPU
 		{D6BD36AC-5908-43E5-9199-DD662FF3D717}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{D6BD36AC-5908-43E5-9199-DD662FF3D717}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{D6BD36AC-5908-43E5-9199-DD662FF3D717}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
@@ -69,10 +57,22 @@ Global
 		{59B57E59-5A34-44F2-8209-EC49D89EB22A}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{59B57E59-5A34-44F2-8209-EC49D89EB22A}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{59B57E59-5A34-44F2-8209-EC49D89EB22A}.Release|iPhone.Build.0 = Release|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BEE4F0C4-AA32-4B89-93A2-268F71A93DE3} = {C1243850-59CA-4CD8-B73F-67DECE21F10D}
 		{D6BD36AC-5908-43E5-9199-DD662FF3D717} = {C1243850-59CA-4CD8-B73F-67DECE21F10D}
 		{59B57E59-5A34-44F2-8209-EC49D89EB22A} = {C1243850-59CA-4CD8-B73F-67DECE21F10D}
+		{797D8E4C-09F0-4EE4-A043-98341F5FD6B8} = {C1243850-59CA-4CD8-B73F-67DECE21F10D}
 	EndGlobalSection
 EndGlobal

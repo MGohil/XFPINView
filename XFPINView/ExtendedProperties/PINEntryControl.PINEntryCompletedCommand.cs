@@ -2,7 +2,7 @@
 
 namespace XFPINView
 {
-    public partial class PINEntryControl
+    public partial class PINView
     {
         /// <summary>
         /// A Command to Bind and invoked when PIN Entry is completed
@@ -17,7 +17,7 @@ namespace XFPINView
            BindableProperty.Create(
               nameof(PINEntryCompletedCommand),
               typeof(Command<string>),
-              typeof(PINEntryControl),
+              typeof(PINView),
               null);
     }
 }

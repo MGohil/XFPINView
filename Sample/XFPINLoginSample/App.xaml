@@ -57,7 +57,7 @@
             <Setter Property="HeightRequest" Value="50" />
         </Style>
 
-        <Style x:Key="PINEntryControlStyle" TargetType="pinview:PINEntryControl">
+        <Style x:Key="PINViewStyle" TargetType="pinview:PINView">
             <Setter Property="BoxSize" Value="50" />
             <Setter Property="BoxShape" Value="Circle" />
             <Setter Property="PINLength" Value="{x:Static local:App.PINLength}" />

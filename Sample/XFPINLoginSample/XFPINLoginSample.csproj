@@ -16,7 +16,6 @@
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.772" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
-    <PackageReference Include="XFPINView" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -27,5 +26,8 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\XFPINView\XFPINView.csproj" />
   </ItemGroup>
 </Project>

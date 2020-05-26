@@ -10,7 +10,7 @@ namespace XFPINLoginSample.Views
 
             // When First PIN box series entry completed, move focus to the next set of PIN entry boxes,
             // so, user can continue entring PIN.
-            newPINEntryControl.PINEntryCompleted += delegate { confirmPINEntryControl.FocusBox(); };
+            newPINView.PINEntryCompleted += delegate { confirmPINView.FocusBox(); };
         }
     }
 }
