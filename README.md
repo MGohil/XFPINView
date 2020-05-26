@@ -84,4 +84,4 @@ Defines the space among each PIN Box.
 ```
 <kbd>
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSpacing.png" width="400">
-<kbd>
+</kbd>
