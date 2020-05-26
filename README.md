@@ -32,3 +32,11 @@ This control can be used for Crete New PIN, Change PIN screen in your mobile app
     PINValue="{Binding PIN}" />
 ```
 <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Color.png" width="200">
+
+### 3. PINLength (Defines the Length of PIN your app supports)
+```
+<xfpinview:PINView 
+    PINLength="5" 
+    PINValue="{Binding PIN}" />
+```
+<img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-PINLength.png" width="250">
