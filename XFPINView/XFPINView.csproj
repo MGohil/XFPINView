@@ -7,12 +7,12 @@
     <Authors>Milan Gohil</Authors>
     <Owners>Milan Gohil</Owners>
     <Summary>PIN Entry Control for Xamarin.Forms</Summary>
-    <PackageTags>PIN, MPIN, PIN Entry, PIN View, Xamarin.Forms, Xamarin</PackageTags>
+    <PackageTags>PIN, MPIN, PINEntry, PINView, Xamarin.Forms, Xamarin</PackageTags>
     <Title>XFPINView</Title>
-    <Description>XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile MPIN entry.</Description>
-    <PackageVersion>1.0.2</PackageVersion>
+    <Description>XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN) entry.</Description>
+    <PackageVersion>1.0.3</PackageVersion>
     <PackageProjectUrl>https://github.com/MGohil/XFPINView</PackageProjectUrl>
-    <PackageReleaseNotes>Added one more peoperty</PackageReleaseNotes>
+    <PackageReleaseNotes>Refactoring</PackageReleaseNotes>
     <PackageIconUrl>https://github.com/MGohil/XFPINView/blob/master/Arts/Package-Icon.png?raw=true</PackageIconUrl>
   </PropertyGroup>
 
