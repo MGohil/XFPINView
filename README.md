@@ -61,3 +61,13 @@ Defines the Width and Height of each PIN Box
     PINValue="{Binding PIN}" />
 ```
 <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSize.png" width="400">
+
+### 6. BoxSpacing
+Defines the space among each PIN Box.
+```
+<xfpinview:PINView
+    BoxSpacing="10"
+    PINLength="5" 
+    PINValue="{Binding PIN}" />
+```
+<img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSpacing.png" width="400">
