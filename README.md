@@ -4,3 +4,6 @@ This control can be used for Crete New PIN, Change PIN screen in your mobile app
 ## iOS : Screenshots
 ![alt text](https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-iOS.png)
 
+## Android : Screenshots
+![alt text](https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Android.png)
+
