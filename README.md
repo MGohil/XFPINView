@@ -35,6 +35,14 @@ https://www.nuget.org/packages/XFPINView/
 ```                
 
 ## Properties
+### AutoDismissKeyboard
+When set to True, the soft keyboard will be automatically dismissed on completion of the PIN entry (All charecters are entered)
+Default : False
+
+### PINEntryCompletedCommand
+A Bindable Command, which gets invoked on completion of the PIN entry (All charecters are entered)
+You can execute your code through this command.
+
 ### BoxShape
 Defines a shape of PIN Boxes. There are 3 pre-defined shapes available:
 - Squere
@@ -115,6 +123,9 @@ Defines the space among each PIN Box.
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSpacing.png" width="400">
 </kbd>
 
+## Events
+### PINEntryCompleted
+invoked on completion of the PIN entry (All charecters are entered).
 
 ## Future Roadmap:
 - [ ] Provide option to show entry as Password or normal text input.
