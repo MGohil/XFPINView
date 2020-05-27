@@ -1,6 +1,6 @@
 # XFPINView (Xamarin.Forms UI Control)
-XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile MPIN entry.
-This control can be used for Crete New PIN, Change PIN screen in your mobile application.
+XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN) entry.
+This control can be used for Login using PIN, Creting New PIN, Change PIN, Entering secure OTP screens in your mobile application.
 
 ## Nuget Package
 https://www.nuget.org/packages/XFPINView/
@@ -20,8 +20,22 @@ https://www.nuget.org/packages/XFPINView/
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Android.png" width="600">
 </kbd>
 
+## Steps
+1. Search for XFPINView [nuget](https://www.nuget.org/packages/XFPINView/) package and install it in your Xamarin.Forms core project. 
+2. In your Page, add reference to this package:
+```xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView"```
+3. Use the control like below:
+```
+<xfpinview:PINView
+    BoxBackgroundColor="#FEDBD0"
+    BoxShape="Circle"
+    PINLength="5"
+    PINValue="{Binding PIN}"
+    Color="#442C2E" />
+```                
+
 ## Properties
-### 1. BoxShape
+### BoxShape
 Defines a shape of PIN Boxes. There are 3 pre-defined shapes available:
 - Squere
 - RoundCorner
@@ -35,7 +49,7 @@ Defines a shape of PIN Boxes. There are 3 pre-defined shapes available:
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxShapes.png" width="400">
 </kbd>
 
-### 2. Color
+### Color
 Defines a color of Borders and Dots of each PIN Box
 ```
 <xfpinview:PINView 
@@ -46,7 +60,19 @@ Defines a color of Borders and Dots of each PIN Box
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Color.png" width="200">
 </kbd>
 
-### 3. PINLength
+### BoxBackgroundColor
+Defines a color of each PIN Box Background. This is area outside of the dot but inside of the Border of the box. 
+```
+ <xfpinview:PINView
+    BoxBackgroundColor="#DCEDC8"
+    PINValue="{Binding PIN}"
+    Color="#33691E" />
+```
+<kbd>
+    <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxBackgroundColor.png" width="400">
+</kbd>
+
+### PINLength
 Defines the Length of PIN your app supports
 ```
 <xfpinview:PINView 
@@ -57,7 +83,7 @@ Defines the Length of PIN your app supports
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-PINLength.png" width="250">
 </kbd>
 
-### 4. PINValue
+### PINValue
 The Bindable PIN value user enters as an input
 ```
 <xfpinview:PINView 
@@ -65,7 +91,7 @@ The Bindable PIN value user enters as an input
     PINValue="{Binding PIN}" />
 ```
 
-### 5. BoxSize
+### BoxSize
 Defines the Width and Height of each PIN Box
 ```
 <xfpinview:PINView
@@ -77,7 +103,7 @@ Defines the Width and Height of each PIN Box
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSize.png" width="400">
 </kbd>
 
-### 6. BoxSpacing
+### BoxSpacing
 Defines the space among each PIN Box.
 ```
 <xfpinview:PINView
@@ -88,3 +114,9 @@ Defines the space among each PIN Box.
 <kbd>
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSpacing.png" width="400">
 </kbd>
+
+
+## Future Roadmap:
+- [ ] Provide option to show entry as Password or normal text input.
+- [ ] Show Focus indicator
+- [ ] Add invalid input / error animation
