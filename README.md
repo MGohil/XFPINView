@@ -2,6 +2,11 @@
 XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN) entry.
 This control can be used for Login using PIN, Creting New PIN, Change PIN, Entering secure OTP screens in your mobile application.
 
+
+<kbd>
+    <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Preview-Graphic.png" width="800">
+</kbd>
+
 ## Nuget Package
 https://www.nuget.org/packages/XFPINView/
 
@@ -12,12 +17,12 @@ https://www.nuget.org/packages/XFPINView/
 
 ## iOS : Screenshots
 <kbd>
-    <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-iOS.png" width="600">
+    <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-iOS.png" width="550">
 </kbd>
 
 ## Android : Screenshots
 <kbd>
-    <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Android.png" width="600">
+    <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-Android.png" width="550">
 </kbd>
 
 ## Steps
@@ -125,7 +130,7 @@ Defines the space among each PIN Box.
 
 ## Events
 ### PINEntryCompleted
-invoked on completion of the PIN entry (All charecters are entered).
+Invokes on completion of the PIN entry (when all charecters are entered).
 
 ## Future Roadmap:
 - [ ] Provide option to show entry as Password or normal text input.
