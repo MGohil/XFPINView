@@ -82,8 +82,9 @@ namespace XFPINView
             boxTemplate.HeightRequest = BoxSize;
             boxTemplate.WidthRequest = BoxSize;
             boxTemplate.Box.BackgroundColor = BoxBackgroundColor;
-
             SetRadius(boxTemplate, BoxShape);
+
+            boxTemplate.SecureMode(IsPassword);
 
             boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
             return boxTemplate;
