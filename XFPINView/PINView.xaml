@@ -11,7 +11,6 @@
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
                 Opacity="0"
-                Style="{StaticResource PINEntryStyle}"
                 WidthRequest="50">
                 <Entry.FontSize>
                     <OnPlatform
