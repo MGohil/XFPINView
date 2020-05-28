@@ -36,6 +36,21 @@ namespace XFPINView
 
                 int length = pin.Length;
 
+                if (!control.IsPassword)
+                {
+                    string oldPin = Convert.ToString(oldValue);
+                    int oldLength = oldPin.Length;
+
+                    if (length > oldLength && length >= 1)
+                    {
+                        (boxes[length - 1] as BoxTemplate).CharLabel.Text = pin.ToCharArray()[length - 1].ToString();
+                    }
+                    else if (length < oldLength)
+                    {
+                        (boxes[length] as BoxTemplate).CharLabel.Text = "";
+                    }
+                }
+
                 for (int i = 0; i < control.PINLength; i++)
                 {
                     var boxTemplate = (BoxTemplate)boxes[i];
@@ -56,6 +71,7 @@ namespace XFPINView
                             await boxTemplate.ShrinkAnimation();
                         }
                         boxTemplate.Dot.IsVisible = false;
+                        boxTemplate.CharLabel.Text = "";
                     }
                 }
             }

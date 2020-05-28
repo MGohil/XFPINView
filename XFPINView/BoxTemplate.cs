@@ -28,6 +28,16 @@ namespace XFPINView
                 Scale = 0,
             };
 
+            CharLabel = new Label()
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                TextColor = Constants.DefaultColor,
+                FontSize = 20,
+                //FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+            };
+
+
             Content = Dot;
         }
 
@@ -41,11 +51,26 @@ namespace XFPINView
             await Dot.ScaleTo(0, 50);
         }
 
+        public void SecureMode(bool isPassword)
+        {
+            if (isPassword)
+            {
+                Content = Dot;
+            }
+            else
+            {
+                Content = CharLabel;
+            }
+        }
+
         public Frame Box
         {
             get { return this; }
         }
 
         public BoxView Dot { get; } = null;
+
+        public Label CharLabel { get; } = null;
+
     }
 }
