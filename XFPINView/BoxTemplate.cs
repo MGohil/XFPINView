@@ -7,6 +7,7 @@ namespace XFPINView
     internal class BoxTemplate : Frame
     {
         private bool _isPassword;
+        private string _inputChar;
 
         public Frame Box { get { return this; } }
 
@@ -32,7 +33,6 @@ namespace XFPINView
                 WidthRequest = Constants.DefaultDotSize,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                IsVisible = false,
                 Scale = 0,
             };
 
@@ -43,20 +43,19 @@ namespace XFPINView
                 TextColor = Constants.DefaultColor,
                 FontAttributes = FontAttributes.Bold,
                 Scale = 0,
-                IsVisible = false,
             };
 
             Content = Dot;
         }
 
-        private async Task GrowAnimation(View view)
+        private void GrowAnimation()
         {
-            await view.ScaleTo(1.0, 100);
+            Content.ScaleTo(1.0, 100);
         }
 
-        private async Task ShrinkAnimation(View view)
+        private void ShrinkAnimation()
         {
-            await view.ScaleTo(0, 100);
+            Content.ScaleTo(0, 100);
         }
 
         /// <summary>
@@ -109,25 +108,25 @@ namespace XFPINView
             {
                 Content = CharLabel;
             }
+
+            if (!string.IsNullOrEmpty(_inputChar))
+            {
+                GrowAnimation();
+            }
+            else
+            {
+                ShrinkAnimation();
+            }
         }
 
         /// <summary>
         /// Clears the input value along with showing the Clear value Animation
         /// </summary>
         /// <returns></returns>
-        public async Task ClearValueWithAnimation()
+        public void ClearValueWithAnimation()
         {
-            if (_isPassword)
-            {
-                await ShrinkAnimation(Dot);
-                Dot.IsVisible = false;
-            }
-            else
-            {
-                await ShrinkAnimation(CharLabel);
-                CharLabel.IsVisible = false;
-                CharLabel.Text = string.Empty;
-            }
+            _inputChar = null;
+            ShrinkAnimation();
         }
 
         /// <summary>
@@ -135,19 +134,11 @@ namespace XFPINView
         /// </summary>
         /// <param name="inputChar"></param>
         /// <returns></returns>
-        public async Task SetValueWithAnimation(char inputChar)
+        public void SetValueWithAnimation(char inputChar)
         {
-            if (_isPassword)
-            {
-                Dot.IsVisible = true;
-                await GrowAnimation(Dot);
-            }
-            else
-            {
-                CharLabel.IsVisible = true;
-                CharLabel.Text = inputChar.ToString();
-                await GrowAnimation(CharLabel);
-            }
+            CharLabel.Text = inputChar.ToString();
+            _inputChar = inputChar.ToString();
+            GrowAnimation();
         }
     }
 }
