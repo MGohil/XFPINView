@@ -6,6 +6,14 @@ namespace XFPINView
 {
     internal class BoxTemplate : Frame
     {
+        private bool _isPassword;
+
+        public Frame Box { get { return this; } }
+
+        public BoxView Dot { get; } = null;
+
+        public Label CharLabel { get; } = null;
+
         public BoxTemplate()
         {
             Padding = 0;
@@ -34,22 +42,27 @@ namespace XFPINView
                 VerticalOptions = LayoutOptions.Center,
                 TextColor = Constants.DefaultColor,
                 FontAttributes = FontAttributes.Bold,
-                //FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+                Scale = 0,
+                IsVisible = false,
             };
 
             Content = Dot;
         }
 
-        public async Task GrowAnimation()
+        private async Task GrowAnimation(View view)
         {
-            await Dot.ScaleTo(1.0, 50);
+            await view.ScaleTo(1.0, 100);
         }
 
-        public async Task ShrinkAnimation()
+        private async Task ShrinkAnimation(View view)
         {
-            await Dot.ScaleTo(0, 50);
+            await view.ScaleTo(0, 100);
         }
 
+        /// <summary>
+        /// Sets the Color of Border, Dot, Input CharLabel
+        /// </summary>
+        /// <param name="color"></param>
         public void SetColor(Color color)
         {
             BorderColor = color;
@@ -78,8 +91,16 @@ namespace XFPINView
             }
         }
 
+        /// <summary>
+        /// Method sets the visibility of Input Characters or Dots.
+        /// IsPassword = True  : Displays Dots
+        /// IsPassword = False : Displays Chars
+        /// </summary>
+        /// <param name="isPassword"></param>
         public void SecureMode(bool isPassword)
         {
+            _isPassword = isPassword;
+
             if (isPassword)
             {
                 Content = Dot;
@@ -90,14 +111,43 @@ namespace XFPINView
             }
         }
 
-        public Frame Box
+        /// <summary>
+        /// Clears the input value along with showing the Clear value Animation
+        /// </summary>
+        /// <returns></returns>
+        public async Task ClearValueWithAnimation()
         {
-            get { return this; }
+            if (_isPassword)
+            {
+                await ShrinkAnimation(Dot);
+                Dot.IsVisible = false;
+            }
+            else
+            {
+                await ShrinkAnimation(CharLabel);
+                CharLabel.IsVisible = false;
+                CharLabel.Text = string.Empty;
+            }
         }
 
-        public BoxView Dot { get; } = null;
-
-        public Label CharLabel { get; } = null;
-
+        /// <summary>
+        /// Sets the input value along with showing the Set value animation
+        /// </summary>
+        /// <param name="inputChar"></param>
+        /// <returns></returns>
+        public async Task SetValueWithAnimation(char inputChar)
+        {
+            if (_isPassword)
+            {
+                Dot.IsVisible = true;
+                await GrowAnimation(Dot);
+            }
+            else
+            {
+                CharLabel.IsVisible = true;
+                CharLabel.Text = inputChar.ToString();
+                await GrowAnimation(CharLabel);
+            }
+        }
     }
 }

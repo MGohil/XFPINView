@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace XFPINView
@@ -29,49 +31,36 @@ namespace XFPINView
             try
             {
                 var control = (PINView)bindable;
-                var boxes = control.PINBoxContainer.Children;
 
-                string pin = Convert.ToString(newValue);
-                ((PINView)bindable).hiddenTextEntry.Text = pin;
+                string newPIN = Convert.ToString(newValue);
+                string oldPIN = Convert.ToString(oldValue);
 
-                int length = pin.Length;
+                control.hiddenTextEntry.Text = newPIN;
+                var pinBoxArray = control.PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
 
-                if (!control.IsPassword)
+                int newPINLength = newPIN.Length;
+                int oldPINLength = oldPIN.Length;
+
+                if (newPINLength > oldPINLength && newPINLength >= 1)
                 {
-                    string oldPin = Convert.ToString(oldValue);
-                    int oldLength = oldPin.Length;
-
-                    if (length > oldLength && length >= 1)
-                    {
-                        (boxes[length - 1] as BoxTemplate).CharLabel.Text = pin.ToCharArray()[length - 1].ToString();
-                    }
-                    else if (length < oldLength)
-                    {
-                        (boxes[length] as BoxTemplate).CharLabel.Text = "";
-                    }
+                    _ = pinBoxArray[newPINLength - 1].SetValueWithAnimation(newPIN.ToCharArray()[newPINLength - 1]);
                 }
-
-                for (int i = 0; i < control.PINLength; i++)
+                else if (newPINLength < oldPINLength)
                 {
-                    var boxTemplate = (BoxTemplate)boxes[i];
-
-                    var previousVisibility = boxTemplate.Dot.IsVisible;
-                    if (i < length)
+                    // If Cleared PIN programatically
+                    if (newPINLength == 0 && oldPINLength == control.PINLength)
                     {
-                        boxTemplate.Dot.IsVisible = true;
-                        if (previousVisibility == false)
+                        for (int i = control.PINLength - 1; i >= 0; i--)
                         {
-                            await boxTemplate.GrowAnimation();
+                            // When all PINS are cleared at once, wait for some time (50 ms) to show clear animation from right to left
+                            // This delay is half then set inside the animation method to clear values a bit faster
+                            _ = pinBoxArray[i].ClearValueWithAnimation();
+                            await Task.Delay(50);
                         }
                     }
                     else
                     {
-                        if (previousVisibility == true)
-                        {
-                            await boxTemplate.ShrinkAnimation();
-                        }
-                        boxTemplate.Dot.IsVisible = false;
-                        boxTemplate.CharLabel.Text = "";
+                        await pinBoxArray[newPINLength].ClearValueWithAnimation();
                     }
                 }
             }
