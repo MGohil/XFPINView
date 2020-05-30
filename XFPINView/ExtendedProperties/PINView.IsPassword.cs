@@ -21,7 +21,7 @@ namespace XFPINView
               nameof(IsPassword),
               typeof(bool),
               typeof(PINView),
-              false,
+              true,
               defaultBindingMode: BindingMode.OneWay,
               propertyChanged: IsPasswordPropertyChanged);
 

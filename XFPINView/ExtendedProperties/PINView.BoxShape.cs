@@ -36,8 +36,7 @@ namespace XFPINView
             control.PINBoxContainer.Children.ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;
-
-                control.SetRadius(boxTemplate, (BoxShapeType)newValue);
+                boxTemplate.SetRadius((BoxShapeType)newValue);
             });
         }
     }

@@ -41,8 +41,8 @@ namespace XFPINView
                 var boxTemplate = (BoxTemplate)x;
                 boxTemplate.HeightRequest = (double)newValue;
                 boxTemplate.WidthRequest = (double)newValue;
-
-                control.SetRadius(boxTemplate, control.BoxShape);
+                boxTemplate.CharLabel.FontSize = ((double)newValue / 2);
+                boxTemplate.SetRadius(control.BoxShape);
             });
         }
     }
