@@ -35,19 +35,51 @@ namespace XFPINView
                 string newPIN = Convert.ToString(newValue);
                 string oldPIN = Convert.ToString(oldValue);
 
-                control.hiddenTextEntry.Text = newPIN;
-                var pinBoxArray = control.PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
-
                 int newPINLength = newPIN.Length;
                 int oldPINLength = oldPIN.Length;
 
-                if (newPINLength > oldPINLength && newPINLength >= 1)
+                // If no any chars entered, return from here
+                if (newPINLength == 0 && oldPINLength == 0)
                 {
-                    _ = pinBoxArray[newPINLength - 1].SetValueWithAnimation(newPIN.ToCharArray()[newPINLength - 1]);
+                    return;
                 }
+
+                char[] newPINChars = newPIN.ToCharArray();
+
+                control.hiddenTextEntry.Text = newPIN;
+                var pinBoxArray = control.PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
+
+                // Check old and new PIN's equal length to detect if new PIN is set programatically with equal length old PIN
+                //    Example: PIN = "12345" and then again set PIN = "98765"
+
+                // If new PIN Length > old PIN Length means user is entering the value
+
+                // TODO 1 : If Programatically set PIN = "12345", then PIN = "456", Last 2 chars should be deleted/removed
+
+                // TODO 2 : IF Programatically set PIN = "12345", now manually delete last 2 chars by delete key,
+                //     and again if we set PIN = "45678", some chars are left blank
+                if (newPINLength == oldPINLength || (newPINLength > oldPINLength && newPINLength >= 1))
+                {
+                    // If Set value programatically
+                    if ((oldPINLength == 0 || newPINLength == oldPINLength) && newPINLength == control.PINLength)
+                    {
+                        for (int i = 0; i < control.PINLength; i++)
+                        {
+                            _ = pinBoxArray[i].SetValueWithAnimation(newPINChars[i]);
+                            await Task.Delay(50);
+                        }
+                    }
+                    else
+                    {
+                        _ = pinBoxArray[newPINLength - 1].SetValueWithAnimation(newPINChars[newPINLength - 1]);
+                    }
+                }
+
+                // If new PIN Length < old PIN Length means user is clearing/deleting the value by backspace or delete
                 else if (newPINLength < oldPINLength)
                 {
-                    // If Cleared PIN programatically
+                    // If all charecters of PIN are Cleared programatically
+                    //     Example : PIN = string.Empty
                     if (newPINLength == 0 && oldPINLength == control.PINLength)
                     {
                         for (int i = control.PINLength - 1; i >= 0; i--)
