@@ -75,8 +75,15 @@ namespace XFPINView
                     else
                     {
                         pinBoxArray[i].ClearValueWithAnimation();
+                        pinBoxArray[i].UnFocusAnimation();
                     }
                 }
+
+                if (newPINLength < control.PINLength)
+                {
+                    pinBoxArray[newPINLength].FocusAnimation();
+                }
+
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XFPINView.Helpers;
@@ -27,12 +28,50 @@ namespace XFPINView
             InitializeComponent();
 
             hiddenTextEntry.TextChanged += PINView_TextChanged;
+            hiddenTextEntry.Focused += HiddenTextEntry_Focused;
+            hiddenTextEntry.Unfocused += HiddenTextEntry_Unfocused;
+
             boxTapGestureRecognizer = new TapGestureRecognizer() { Command = new Command(() => { BoxTapCommandExecute(); }) };
 
             CreateControl();
         }
 
-       
+        private void HiddenTextEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+            var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
+
+            for (int i = 0; i < PINLength; i++)
+            {
+                pinBoxArray[i].UnFocusAnimation();
+            }
+        }
+
+        private void HiddenTextEntry_Focused(object sender, FocusEventArgs e)
+        {
+            var length = PINValue == null ? 0 : PINValue.Length;
+            var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
+
+            if (length == PINLength)
+            {
+                pinBoxArray[length - 1].FocusAnimation();
+            }
+            else
+            {
+                for (int i = 0; i < PINLength; i++)
+                {
+                    if (i == length)
+                    {
+                        pinBoxArray[i].FocusAnimation();
+                    }
+                    else
+                    {
+                        pinBoxArray[i].UnFocusAnimation();
+                    }
+                }
+            }
+        }
+
+
 
         /// <summary>
         /// Calling this, will bring up the soft keyboard, or will help focus the control
@@ -84,7 +123,7 @@ namespace XFPINView
             boxTemplate.Box.BackgroundColor = BoxBackgroundColor;
             boxTemplate.CharLabel.FontSize = BoxSize / 2;
             boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
-
+            boxTemplate.BoxFocusColor = BoxFocusColor;
             boxTemplate.SecureMode(IsPassword);
             boxTemplate.SetColor(Color);
             boxTemplate.SetRadius(BoxShape);
