@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XFPINView.Helpers;
 
 namespace XFPINView
 {
     internal class BoxTemplate : Frame
     {
-        private bool _isPassword;
         private string _inputChar;
+        private Color _color;
+        public Color BoxFocusColor { get; set; }
 
         public Frame Box { get { return this; } }
 
@@ -42,6 +42,7 @@ namespace XFPINView
                 VerticalOptions = LayoutOptions.Center,
                 TextColor = Constants.DefaultColor,
                 FontAttributes = FontAttributes.Bold,
+                VerticalTextAlignment = TextAlignment.Center,
                 Scale = 0,
             };
 
@@ -64,6 +65,8 @@ namespace XFPINView
         /// <param name="color"></param>
         public void SetColor(Color color)
         {
+            _color = color;
+
             BorderColor = color;
             Dot.BackgroundColor = color;
             CharLabel.TextColor = color;
@@ -98,8 +101,6 @@ namespace XFPINView
         /// <param name="isPassword"></param>
         public void SecureMode(bool isPassword)
         {
-            _isPassword = isPassword;
-
             if (isPassword)
             {
                 Content = Dot;
@@ -136,9 +137,23 @@ namespace XFPINView
         /// <returns></returns>
         public void SetValueWithAnimation(char inputChar)
         {
+            UnFocusAnimation();
+
             CharLabel.Text = inputChar.ToString();
             _inputChar = inputChar.ToString();
             GrowAnimation();
+        }
+
+        // Sets the focus indication color
+        public void FocusAnimation()
+        {
+            BorderColor = BoxFocusColor;
+        }
+
+        // Removes the focusindication color and set back to original
+        public void UnFocusAnimation()
+        {
+            BorderColor = _color;
         }
     }
 }
