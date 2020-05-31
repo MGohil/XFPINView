@@ -29,8 +29,7 @@ namespace XFPINView
             ((PINView)bindable).PINBoxContainer.Children.ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;
-                boxTemplate.Box.BorderColor = (Color)newValue;
-                boxTemplate.Dot.BackgroundColor = (Color)newValue;
+                boxTemplate.SetColor((Color)newValue);
             });
         }
     }

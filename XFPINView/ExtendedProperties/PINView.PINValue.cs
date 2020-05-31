@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace XFPINView
@@ -29,33 +31,50 @@ namespace XFPINView
             try
             {
                 var control = (PINView)bindable;
-                var boxes = control.PINBoxContainer.Children;
 
-                string pin = Convert.ToString(newValue);
-                ((PINView)bindable).hiddenTextEntry.Text = pin;
+                string newPIN = Convert.ToString(newValue);
+                string oldPIN = Convert.ToString(oldValue);
 
-                int length = pin.Length;
+                int newPINLength = newPIN.Length;
+                int oldPINLength = oldPIN.Length;
+
+                // If no any chars entered, return from here
+                if (newPINLength == 0 && oldPINLength == 0)
+                {
+                    return;
+                }
+
+                char[] newPINChars = newPIN.ToCharArray();
+
+                control.hiddenTextEntry.Text = newPIN;
+                var pinBoxArray = control.PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
+
+                bool isPINEnteredProgramatically = (oldPINLength == 0 && newPINLength == control.PINLength) || newPINLength == oldPINLength;
+
+                if (isPINEnteredProgramatically)
+                {
+                    //Clear all Previous Entries, and then enter new one, to show proper Entry sequence animation
+                    for (int i = 0; i < control.PINLength; i++)
+                    {
+                        pinBoxArray[i].ClearValueWithAnimation();
+                    }
+                }
 
                 for (int i = 0; i < control.PINLength; i++)
                 {
-                    var boxTemplate = (BoxTemplate)boxes[i];
-
-                    var previousVisibility = boxTemplate.Dot.IsVisible;
-                    if (i < length)
+                    if (i < newPINLength)
                     {
-                        boxTemplate.Dot.IsVisible = true;
-                        if (previousVisibility == false)
+                        // If user sets PIN value programatically show a bit of Entry sequence animation
+                        if (isPINEnteredProgramatically)
                         {
-                            await boxTemplate.GrowAnimation();
+                            await Task.Delay(50);
                         }
+
+                        pinBoxArray[i].SetValueWithAnimation(newPINChars[i]);
                     }
                     else
                     {
-                        if (previousVisibility == true)
-                        {
-                            await boxTemplate.ShrinkAnimation();
-                        }
-                        boxTemplate.Dot.IsVisible = false;
+                        pinBoxArray[i].ClearValueWithAnimation();
                     }
                 }
             }

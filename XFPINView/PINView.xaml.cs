@@ -82,33 +82,16 @@ namespace XFPINView
             boxTemplate.HeightRequest = BoxSize;
             boxTemplate.WidthRequest = BoxSize;
             boxTemplate.Box.BackgroundColor = BoxBackgroundColor;
-
-            SetRadius(boxTemplate, BoxShape);
-
+            boxTemplate.CharLabel.FontSize = BoxSize / 2;
             boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
+
+            boxTemplate.SecureMode(IsPassword);
+            boxTemplate.SetColor(Color);
+            boxTemplate.SetRadius(BoxShape);
+
             return boxTemplate;
         }
 
-        /// <summary>
-        /// Applies the Corner Radius to the PIN Box based on the ShapeType
-        /// </summary>
-        /// <param name="boxTemplate"></param>
-        /// <param name="shapeType"></param>
-        private void SetRadius(BoxTemplate boxTemplate, BoxShapeType shapeType)
-        {
-            if (shapeType == BoxShapeType.Circle)
-            {
-                boxTemplate.Box.CornerRadius = (float)boxTemplate.Box.HeightRequest / 2;
-            }
-            else if (shapeType == BoxShapeType.Squere)
-            {
-                boxTemplate.Box.CornerRadius = 0;
-            }
-            else if (shapeType == BoxShapeType.RoundCorner)
-            {
-                boxTemplate.Box.CornerRadius = 10;
-            }
-        }
         #endregion
 
         #region Events

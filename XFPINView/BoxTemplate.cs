@@ -6,6 +6,15 @@ namespace XFPINView
 {
     internal class BoxTemplate : Frame
     {
+        private bool _isPassword;
+        private string _inputChar;
+
+        public Frame Box { get { return this; } }
+
+        public BoxView Dot { get; } = null;
+
+        public Label CharLabel { get; } = null;
+
         public BoxTemplate()
         {
             Padding = 0;
@@ -24,28 +33,112 @@ namespace XFPINView
                 WidthRequest = Constants.DefaultDotSize,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                IsVisible = false,
+                Scale = 0,
+            };
+
+            CharLabel = new Label()
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                TextColor = Constants.DefaultColor,
+                FontAttributes = FontAttributes.Bold,
                 Scale = 0,
             };
 
             Content = Dot;
         }
 
-        public async Task GrowAnimation()
+        private void GrowAnimation()
         {
-            await Dot.ScaleTo(1.0, 50);
+            Content.ScaleTo(1.0, 100);
         }
 
-        public async Task ShrinkAnimation()
+        private void ShrinkAnimation()
         {
-            await Dot.ScaleTo(0, 50);
+            Content.ScaleTo(0, 100);
         }
 
-        public Frame Box
+        /// <summary>
+        /// Sets the Color of Border, Dot, Input CharLabel
+        /// </summary>
+        /// <param name="color"></param>
+        public void SetColor(Color color)
         {
-            get { return this; }
+            BorderColor = color;
+            Dot.BackgroundColor = color;
+            CharLabel.TextColor = color;
         }
 
-        public BoxView Dot { get; } = null;
+        /// <summary>
+        /// Applies the Corner Radius to the PIN Box based on the ShapeType
+        /// </summary>
+        /// <param name="boxTemplate"></param>
+        /// <param name="shapeType"></param>
+        public void SetRadius(BoxShapeType shapeType)
+        {
+            if (shapeType == BoxShapeType.Circle)
+            {
+                CornerRadius = (float)HeightRequest / 2;
+            }
+            else if (shapeType == BoxShapeType.Squere)
+            {
+                CornerRadius = 0;
+            }
+            else if (shapeType == BoxShapeType.RoundCorner)
+            {
+                CornerRadius = 10;
+            }
+        }
+
+        /// <summary>
+        /// Method sets the visibility of Input Characters or Dots.
+        /// IsPassword = True  : Displays Dots
+        /// IsPassword = False : Displays Chars
+        /// </summary>
+        /// <param name="isPassword"></param>
+        public void SecureMode(bool isPassword)
+        {
+            _isPassword = isPassword;
+
+            if (isPassword)
+            {
+                Content = Dot;
+            }
+            else
+            {
+                Content = CharLabel;
+            }
+
+            if (!string.IsNullOrEmpty(_inputChar))
+            {
+                GrowAnimation();
+            }
+            else
+            {
+                ShrinkAnimation();
+            }
+        }
+
+        /// <summary>
+        /// Clears the input value along with showing the Clear value Animation
+        /// </summary>
+        /// <returns></returns>
+        public void ClearValueWithAnimation()
+        {
+            _inputChar = null;
+            ShrinkAnimation();
+        }
+
+        /// <summary>
+        /// Sets the input value along with showing the Set value animation
+        /// </summary>
+        /// <param name="inputChar"></param>
+        /// <returns></returns>
+        public void SetValueWithAnimation(char inputChar)
+        {
+            CharLabel.Text = inputChar.ToString();
+            _inputChar = inputChar.ToString();
+            GrowAnimation();
+        }
     }
 }
