@@ -4,3 +4,5 @@ Sample/XFPINLoginSample.Android/bin
 Sample/XFPINLoginSample.iOS/obj
 Sample/XFPINLoginSample/obj
 Sample/XFPINLoginSample/bin
+/XFPINView/obj
+/.vs
