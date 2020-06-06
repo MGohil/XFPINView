@@ -79,11 +79,16 @@ namespace XFPINView
                     }
                 }
 
+                // Set or move Current Focus
                 if (newPINLength < control.PINLength)
                 {
                     pinBoxArray[newPINLength].FocusAnimation();
                 }
-
+                // When while typing, if you reach to the last charecter, keep focus there (on last character Box), If PIN entry is focused
+                else if (control.hiddenTextEntry.IsFocused && newPINLength == control.PINLength)
+                {
+                    pinBoxArray[newPINLength - 1].FocusAnimation();
+                }
             }
             catch (Exception ex)
             {
