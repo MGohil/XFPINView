@@ -6,3 +6,6 @@ Sample/XFPINLoginSample/obj
 Sample/XFPINLoginSample/bin
 /XFPINView/obj
 /.vs
+/Sample/XFPINLoginSample.UWP/bin/x86/Debug
+/Sample/XFPINLoginSample.UWP/obj
+/XFPINView/bin/Debug
