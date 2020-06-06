@@ -11,7 +11,7 @@ namespace XFPINView
 
         public Frame Box { get { return this; } }
 
-        public BoxView Dot { get; } = null;
+        public Frame Dot { get; } = null;
 
         public Label CharLabel { get; } = null;
 
@@ -25,15 +25,17 @@ namespace XFPINView
             HeightRequest = WidthRequest = Constants.DefaultBoxSize;
             VerticalOptions = LayoutOptions.Center;
 
-            Dot = new BoxView()
+            Dot = new Frame()
             {
                 BackgroundColor = Constants.DefaultColor,
-                CornerRadius = Constants.DefaultDotSize / 2,
+                CornerRadius = (float)Constants.DefaultDotSize / 2,
                 HeightRequest = Constants.DefaultDotSize,
                 WidthRequest = Constants.DefaultDotSize,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 Scale = 0,
+                Padding = 0,
+                HasShadow = false,
             };
 
             CharLabel = new Label()
@@ -45,6 +47,12 @@ namespace XFPINView
                 VerticalTextAlignment = TextAlignment.Center,
                 Scale = 0,
             };
+
+            // In UWP, Label doesn't show vertically center properly. So, Lifted it bit up from bottom
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                CharLabel.Margin = new Thickness(0, 0, 0, 2);
+            }
 
             Content = Dot;
         }
