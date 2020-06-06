@@ -20,6 +20,10 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\SampleViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\SampleViews\ColorSampleView %28copy%29.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MainPage.xaml.cs">

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFPINLoginSample.Views.SampleViews.BoxShapeSampleView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
+    <ContentView.Content>
+        <StackLayout>
+
+            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}" Text="BoxShape" />
+
+            <xfpinview:PINView
+                x:Name="pinViewSquere"
+                BoxShape="Squere"
+                Style="{StaticResource PINViewStyle}" />
+            <xfpinview:PINView
+                x:Name="pinViewRoundCorner"
+                BoxShape="RoundCorner"
+                Style="{StaticResource PINViewStyle}" />
+            <xfpinview:PINView
+                x:Name="pinViewCircle"
+                BoxShape="Circle"
+                Style="{StaticResource PINViewStyle}" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

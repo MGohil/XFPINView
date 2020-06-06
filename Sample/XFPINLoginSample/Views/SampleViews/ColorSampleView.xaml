@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFPINLoginSample.Views.SampleViews.ColorSampleView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
+    <ContentView.Content>
+        <StackLayout>
+
+            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}" Text="Color" />
+
+            <xfpinview:PINView
+                x:Name="pinViewSquere"
+                BoxBackgroundColor="Transparent"
+                BoxShape="Squere"
+                Style="{StaticResource PINViewStyle}"
+                Color="Red" />
+            <xfpinview:PINView
+                x:Name="pinViewRoundCorner"
+                BoxBackgroundColor="Transparent"
+                BoxShape="RoundCorner"
+                Style="{StaticResource PINViewStyle}"
+                Color="Green" />
+            <xfpinview:PINView
+                x:Name="pinViewCircle"
+                BoxBackgroundColor="Transparent"
+                BoxShape="Circle"
+                Style="{StaticResource PINViewStyle}"
+                Color="Blue" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -28,5 +28,10 @@
             Command="{Binding GoToChangePINPageCommand}"
             Style="{StaticResource ButtonStyle}"
             Text="Change PIN" />
+
+        <Button
+            Command="{Binding GoToPINSamplesPageCommand}"
+            Style="{StaticResource ButtonStyle}"
+            Text="All Samples" />
     </StackLayout>
 </ContentPage>

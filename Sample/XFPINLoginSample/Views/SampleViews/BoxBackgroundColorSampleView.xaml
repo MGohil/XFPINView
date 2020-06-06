@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFPINLoginSample.Views.SampleViews.BoxBackgroundColorSampleView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
+    <ContentView.Content>
+        <StackLayout>
+
+            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}" Text="BoxBackgroundColor" />
+
+            <xfpinview:PINView
+                x:Name="pinView1"
+                BoxBackgroundColor="#FFE5E5"
+                Style="{StaticResource PINViewStyle}"
+                Color="#FF0000" />
+
+            <xfpinview:PINView
+                x:Name="pinView2"
+                BoxBackgroundColor="#DCEDC8"
+                Style="{StaticResource PINViewStyle}"
+                Color="#33691E" />
+
+            <xfpinview:PINView
+                x:Name="pinView3"
+                BackgroundColor="Black"
+                BoxBackgroundColor="#181818"
+                BoxFocusColor="Yellow"
+                HeightRequest="100"
+                Style="{StaticResource PINViewStyle}"
+                Color="#989898" />
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

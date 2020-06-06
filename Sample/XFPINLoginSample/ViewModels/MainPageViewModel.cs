@@ -13,6 +13,7 @@ namespace XFPINLoginSample.ViewModels
             GoToPINLoginPageCommand = new Command(GoToPINLoginPageCommandExecute);
             GoToCreatePINPageCommand = new Command(GoToCreatePINPageCommandExecute);
             GoToChangePINPageCommand = new Command(GoToChangePINPageCommandExecute);
+            GoToPINSamplesPageCommand = new Command(GoToPINSamplesPageCommandExecute);
         }
 
         public Command GoToPINLoginPageCommand { get; set; }
@@ -31,6 +32,12 @@ namespace XFPINLoginSample.ViewModels
         private void GoToChangePINPageCommandExecute()
         {
             Application.Current.MainPage.Navigation.PushAsync(new ChangePINPage());
+        }
+
+        public Command GoToPINSamplesPageCommand { get; set; }
+        private void GoToPINSamplesPageCommandExecute()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new PINSamplesPage());
         }
     }
 }

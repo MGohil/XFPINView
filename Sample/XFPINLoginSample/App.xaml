@@ -64,5 +64,13 @@
             <Setter Property="Color" Value="{DynamicResource PrimaryColor}" />
             <Setter Property="BoxBackgroundColor" Value="{DynamicResource PrimaryLightColor}" />
         </Style>
+
+        <Style x:Key="SampleViewsHeaderLabelStyle" TargetType="Label">
+            <Setter Property="Padding" Value="15,5" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="BackgroundColor" Value="#F5F5F5" />
+        </Style>
     </Application.Resources>
 </Application>
