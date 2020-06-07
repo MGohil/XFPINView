@@ -7,9 +7,9 @@ namespace XFPINLoginSample.Views.SampleViews
         public ColorSampleView()
         {
             InitializeComponent();
-            pinViewSquere.PINValue = "12345";
-            pinViewCircle.PINValue = "12345";
-            pinViewRoundCorner.PINValue = "12345";
+            pinView1.PINValue = "12345";
+            pinView2.PINValue = "12345";
+            pinView3.PINValue = "12345";
         }
     }
 }

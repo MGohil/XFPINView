@@ -25,7 +25,8 @@
                 <xfpinview:PINView
                     x:Name="pinView1"
                     BoxBackgroundColor="{DynamicResource PrimaryLightColor}"
-                    BoxShape="Circle" />
+                    BoxShape="Circle"
+                    Color="{DynamicResource PrimaryColor}" />
 
                 <Label
                     Margin="0,20,0,0"

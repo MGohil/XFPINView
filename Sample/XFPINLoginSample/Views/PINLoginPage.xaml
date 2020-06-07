@@ -19,6 +19,7 @@
                 Text="Please enter your PIN" />
 
             <xfpinview:PINView
+                AutoDismissKeyboard="True"
                 IsPassword="True"
                 PINEntryCompletedCommand="{Binding PINEntryCompletedCommand}"
                 PINValue="{Binding PIN}"

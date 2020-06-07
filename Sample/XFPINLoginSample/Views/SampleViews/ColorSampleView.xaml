@@ -23,9 +23,9 @@
             <StackLayout Padding="{StaticResource ContentPadding}">
                 <Label HorizontalTextAlignment="Center" Text="Color = Accent (Default)" />
                 <xfpinview:PINView
-                    x:Name="pinViewSquere"
+                    x:Name="pinView1"
                     BoxBackgroundColor="Transparent"
-                    BoxShape="Squere"
+                    BoxShape="Circle"
                     PINLength="5" />
 
                 <Label
@@ -33,10 +33,10 @@
                     HorizontalTextAlignment="Center"
                     Text="Color = Green" />
                 <xfpinview:PINView
-                    x:Name="pinViewRoundCorner"
+                    x:Name="pinView2"
                     BoxBackgroundColor="Transparent"
-                    BoxShape="RoundCorner"
-                    Style="{StaticResource PINViewStyle}"
+                    BoxShape="Circle"
+                    PINLength="5"
                     Color="Green" />
 
                 <Label
@@ -44,10 +44,10 @@
                     HorizontalTextAlignment="Center"
                     Text="Color = Blue" />
                 <xfpinview:PINView
-                    x:Name="pinViewCircle"
+                    x:Name="pinView3"
                     BoxBackgroundColor="Transparent"
                     BoxShape="Circle"
-                    Style="{StaticResource PINViewStyle}"
+                    PINLength="5"
                     Color="Blue" />
             </StackLayout>
         </StackLayout>

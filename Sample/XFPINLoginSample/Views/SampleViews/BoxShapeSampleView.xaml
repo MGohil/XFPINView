@@ -15,7 +15,7 @@
                         <Span Text="{x:Static system:Environment.NewLine}" />
                         <Span FontSize="Small" Text="Type : Enum [ Squere, RoundCorner, Circle ]" />
                         <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Default : Circle" />
+                        <Span FontSize="Small" Text="Default : RoundCorner" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -30,7 +30,7 @@
                 <Label
                     Margin="0,20,0,0"
                     HorizontalTextAlignment="Center"
-                    Text="BoxShape = RoundCorner" />
+                    Text="BoxShape = RoundCorner (Default)" />
                 <xfpinview:PINView
                     x:Name="pinViewRoundCorner"
                     BoxShape="RoundCorner"
