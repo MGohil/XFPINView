@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Plugin.Settings;
 using Xamarin.Forms;
 using XFPINLoginSample.Views;
 
@@ -23,37 +22,16 @@ namespace XFPINLoginSample.ViewModels
         public Command<string> PINEntryCompletedCommand { get; set; }
         private async void PINEntryCompletedCommandExecute(string pin)
         {
-            // Here you will fetch saved value from your preferred local storage, where you saved the PIN,
-            // And match the user's entry with it
-            var existingSavedPIN = CrossSettings.Current.GetValueOrDefault("PIN", string.Empty);
-            if (string.IsNullOrWhiteSpace(existingSavedPIN))
-            {
-                await Application.Current.MainPage.DisplayAlert("Message", "You have not yet created new PIN. Click OK to create new PIN", "OK");
-                await Application.Current.MainPage.Navigation.PushAsync(new CreatePINPage());
-            }
-            else
-            {
-                // Check if entered PIN matches saved PIN
-                if (PIN != existingSavedPIN)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Your entered a wrong PIN", "OK");
-                    PIN = string.Empty;
-                    return;
-                }
+            // This is a sample to demonstrate how PINView helps taking the user input as PIN, while making a PIN login.
+            // In your actual app, you will make validations, and check the entry against the locally saved PIN to match Entry with it.
+            // You should navigate to the next page only if the Entry matches the Saved value.
 
-                //await Application.Current.MainPage.DisplayAlert("Message", $"PIN Entered {pin}", "OK");
+            // As a sample, you can enter any value as a PIN to login.
 
-                _ = Task.Run(async () =>
-                {
-                    // Have some delay before you navigate, otherwise, the last PIN won't be displayed and navigation will be invoked.
-                    await Task.Delay(200);
+            // Clear Entry before navigation
+            PIN = string.Empty;
 
-                    Device.BeginInvokeOnMainThread(() =>
-                    {
-                        Application.Current.MainPage.Navigation.PushAsync(new DashboardPage());
-                    });
-                });
-            }
+            await Application.Current.MainPage.Navigation.PushAsync(new DashboardPage());
         }
     }
 }

@@ -139,12 +139,15 @@ namespace XFPINView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PINView_TextChanged(object sender, TextChangedEventArgs e)
+        private async void PINView_TextChanged(object sender, TextChangedEventArgs e)
         {
             PINValue = e.NewTextValue;
 
             if (e.NewTextValue.Length == PINLength)
             {
+                // To have some delay, before invoking any Action, otherwise, (if) while navigation, it will be quick and you won't see your last entry.
+                await Task.Delay(200);
+
                 PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
                 PINEntryCompletedCommand?.Execute(PINValue);
 
