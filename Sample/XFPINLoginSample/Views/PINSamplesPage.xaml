@@ -14,11 +14,15 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="15">
+            <StackLayout Spacing="0">
                 <sampleViews:BoxShapeSampleView />
+                <sampleViews:PINLengthSampleView />
+                <sampleViews:IsPasswordSampleView />
                 <sampleViews:ColorSampleView />
                 <sampleViews:BoxBackgroundColorSampleView />
-
+                <sampleViews:BoxFocusColorSampleView />
+                <sampleViews:BoxSizeSampleView />
+                <sampleViews:BoxSpacingSampleView />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

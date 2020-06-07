@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
-    x:Class="XFPINLoginSample.Views.SampleViews.ColorSampleView"
+    x:Class="XFPINLoginSample.Views.SampleViews.PINLengthSampleView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:system="clr-namespace:System;assembly=netstandard"
@@ -11,45 +11,41 @@
             <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Color" />
+                        <Span Text="PINLength" />
                         <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Type : Color" />
+                        <Span FontSize="Small" Text="Type : Integer" />
                         <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Default : Color.Accent" />
+                        <Span FontSize="Small" Text="Default : 4" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
 
             <StackLayout Padding="{StaticResource ContentPadding}">
-                <Label HorizontalTextAlignment="Center" Text="Color = Accent (Default)" />
+                <Label HorizontalTextAlignment="Center" Text="PINLength = 4 (Default)" />
                 <xfpinview:PINView
-                    x:Name="pinViewSquere"
-                    BoxBackgroundColor="Transparent"
-                    BoxShape="Squere"
-                    PINLength="5" />
+                    x:Name="pinView1"
+                    BoxBackgroundColor="{DynamicResource PrimaryLightColor}"
+                    BoxShape="Circle" />
 
                 <Label
                     Margin="0,20,0,0"
                     HorizontalTextAlignment="Center"
-                    Text="Color = Green" />
+                    Text="PINLength = 5" />
                 <xfpinview:PINView
-                    x:Name="pinViewRoundCorner"
-                    BoxBackgroundColor="Transparent"
-                    BoxShape="RoundCorner"
-                    Style="{StaticResource PINViewStyle}"
-                    Color="Green" />
+                    x:Name="pinView2"
+                    PINLength="5"
+                    Style="{StaticResource PINViewStyle}" />
 
                 <Label
                     Margin="0,20,0,0"
                     HorizontalTextAlignment="Center"
-                    Text="Color = Blue" />
+                    Text="PINLength = 6" />
                 <xfpinview:PINView
-                    x:Name="pinViewCircle"
-                    BoxBackgroundColor="Transparent"
-                    BoxShape="Circle"
-                    Style="{StaticResource PINViewStyle}"
-                    Color="Blue" />
+                    x:Name="pinView3"
+                    PINLength="6"
+                    Style="{StaticResource PINViewStyle}" />
             </StackLayout>
+
         </StackLayout>
     </ContentView.Content>
 </ContentView>
