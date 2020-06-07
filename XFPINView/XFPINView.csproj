@@ -6,13 +6,15 @@
     <PackageId>XFPINView</PackageId>
     <Authors>Milan Gohil</Authors>
     <Owners>Milan Gohil</Owners>
-    <Summary>PIN Entry Control for Xamarin.Forms</Summary>
+    <Summary>PIN(MPIN), OTP, Verification Code entry Control for Xamarin.Forms</Summary>
     <PackageTags>PIN, MPIN, PINEntry, PINView, OTP, Xamarin.Forms, Xamarin</PackageTags>
     <Title>XFPINView</Title>
-    <Description>XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN) entry.</Description>
-    <PackageVersion>1.0.4</PackageVersion>
+    <Description>XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN), OTP or Verification Code Input entry.</Description>
+    <PackageVersion>1.0.5</PackageVersion>
     <PackageProjectUrl>https://github.com/MGohil/XFPINView</PackageProjectUrl>
-    <PackageReleaseNotes>Solved RELEASE mode crash issue.</PackageReleaseNotes>
+    <PackageReleaseNotes> - Added Some more Bindable Properties
+ - Solved some issues
+ - Improvements</PackageReleaseNotes>
     <PackageIconUrl>https://github.com/MGohil/XFPINView/blob/master/Arts/Package-Icon.png?raw=true</PackageIconUrl>
     <PackageLicenseUrl>https://github.com/MGohil/XFPINView/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
