@@ -145,17 +145,17 @@ namespace XFPINView
 
             if (e.NewTextValue.Length == PINLength)
             {
-                // To have some delay, before invoking any Action, otherwise, (if) while navigation, it will be quick and you won't see your last entry.
-                await Task.Delay(200);
-
-                PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
-                PINEntryCompletedCommand?.Execute(PINValue);
-
                 // Dismiss the keyboard, once entry is completed up to the defined length and if AutoDismissKeyboard property is true 
                 if (AutoDismissKeyboard == true)
                 {
                     (sender as Entry).Unfocus();
                 }
+
+                // To have some delay, before invoking any Action, otherwise, (if) while navigation, it will be quick and you won't see your last entry.
+                await Task.Delay(200);
+
+                PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
+                PINEntryCompletedCommand?.Execute(PINValue);
             }
         }
         #endregion
