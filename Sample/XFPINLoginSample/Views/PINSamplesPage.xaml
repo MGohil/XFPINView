@@ -18,6 +18,7 @@
                 <sampleViews:BoxShapeSampleView />
                 <sampleViews:PINLengthSampleView />
                 <sampleViews:IsPasswordSampleView />
+                <sampleViews:PINInputTypeSampleView />
                 <sampleViews:ColorSampleView />
                 <sampleViews:BoxBackgroundColorSampleView />
                 <sampleViews:BoxFocusColorSampleView />
@@ -25,7 +26,6 @@
                 <sampleViews:BoxSpacingSampleView />
                 <sampleViews:AutoDismissKeyboardSampleView />
                 <sampleViews:InputPINProgramaticallySampleView />
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
