@@ -1,5 +1,5 @@
 # XFPINView (Xamarin.Forms UI Control)
-XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN) entry.
+XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN), OTP, Verification Code entry.
 This control can be used for Login using PIN, Creting New PIN, Change PIN, Entering secure OTP screens in your mobile application.
 
 
@@ -13,7 +13,7 @@ https://www.nuget.org/packages/XFPINView/
 ### Platforms Supported
 - [X] iOS
 - [X] Android
-- [ ] UWP (To be Checked)
+- [X] UWP
 
 ## iOS : Screenshots
 <kbd>
@@ -38,21 +38,31 @@ https://www.nuget.org/packages/XFPINView/
     PINValue="{Binding PIN}"
     Color="#442C2E" />
 ```                
+## Properties Definitions
+| Property | Type | Default | Description |
+| ----------| --- | --- | --- |
+| AutoDismissKeyboard | Boolean | False | Decides whether to dismiss the keyboard automatically when all charecters entered |
+| BoxBackgroundColor | Color | Transparent | Defines the BackgroundColor of each PIN Box |
+| BoxFocusColor | Color | Black |Defines the Focus Indicator Border Color when PIN Box is Focused |
+| BoxShape | Enum | Circle | Defines the shape of PIN Box from Enum values [ Squere, RoundCorner, Circle ] |
+| BoxSize | Double | 50 | Defines the Width and Height of each PIN Box |
+| BoxSpacing | Double | 5 | Defines the space among each PIN Box |
+| Color | Color | Accent | Defines the Color of PIN Box (Border and Dot) |
+| IsPassword | Boolean | True | Defines whether to show actual input character or hide / secure via Dot |
+| PINInputType | Enum | Numeric | Defines the Input Type from Enum [ Numeric, AlphaNumeric ] |
+| PINLength | Integer | 4 | Defines the Length (No. of Characters) of the PIN |
+| PINValue | String | Empty | Bind this to string Property in your ViewModel, to get value of the Entered PIN |
 
-## Properties
-### AutoDismissKeyboard
-When set to True, the soft keyboard will be automatically dismissed on completion of the PIN entry (All charecters are entered)
-Default : False
 
-### PINEntryCompletedCommand
-A Bindable Command, which gets invoked on completion of the PIN entry (All charecters are entered)
-You can execute your code through this command.
+## Commands / Events Definitions
+| Command / Event | Type | Description |
+| ----------| --- | --- |
+| PINEntryCompletedCommand | Command | A Bindable Command, which gets invoked on completion of the PIN entry (All charecters are entered) You can execute your code through this command |
+| PINEntryCompleted | Event | Invokes on completion of the PIN entry (when all charecters are entered). |
 
+
+## Snippets / Screenshots
 ### BoxShape
-Defines a shape of PIN Boxes. There are 3 pre-defined shapes available:
-- Squere
-- RoundCorner
-- Circle
 ```
 <xfpinview:PINView 
     BoxShape="Circle" 
@@ -63,7 +73,6 @@ Defines a shape of PIN Boxes. There are 3 pre-defined shapes available:
 </kbd>
 
 ### Color
-Defines a color of Borders and Dots of each PIN Box
 ```
 <xfpinview:PINView 
     Color="Red" 
@@ -74,7 +83,6 @@ Defines a color of Borders and Dots of each PIN Box
 </kbd>
 
 ### BoxBackgroundColor
-Defines a color of each PIN Box Background. This is area outside of the dot but inside of the Border of the box. 
 ```
  <xfpinview:PINView
     BoxBackgroundColor="#DCEDC8"
@@ -105,7 +113,6 @@ The Bindable PIN value user enters as an input
 ```
 
 ### BoxSize
-Defines the Width and Height of each PIN Box
 ```
 <xfpinview:PINView
     BoxSize="50"
@@ -117,7 +124,6 @@ Defines the Width and Height of each PIN Box
 </kbd>
 
 ### BoxSpacing
-Defines the space among each PIN Box.
 ```
 <xfpinview:PINView
     BoxSpacing="10"
@@ -128,11 +134,8 @@ Defines the space among each PIN Box.
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Sample-BoxSpacing.png" width="400">
 </kbd>
 
-## Events
-### PINEntryCompleted
-Invokes on completion of the PIN entry (when all charecters are entered).
 
 ## Future Roadmap:
-- [ ] Provide option to show entry as Password or normal text input.
-- [ ] Show Focus indicator
+- [X] Provide option to show entry as Password or normal text input.
+- [X] Show Focus indicator
 - [ ] Add invalid input / error animation
