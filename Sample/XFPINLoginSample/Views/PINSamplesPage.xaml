@@ -23,6 +23,9 @@
                 <sampleViews:BoxFocusColorSampleView />
                 <sampleViews:BoxSizeSampleView />
                 <sampleViews:BoxSpacingSampleView />
+                <sampleViews:AutoDismissKeyboardSampleView />
+                <sampleViews:InputPINProgramaticallySampleView />
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

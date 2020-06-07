@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFPINLoginSample.Views.SampleViews.InputPINProgramaticallySampleView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
+    xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
+    <ContentView.Content>
+        <StackLayout Spacing="0">
+
+            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Programatically Input PIN" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <StackLayout Padding="0,20,0,0">
+
+                <xfpinview:PINView
+                    x:Name="pinView1"
+                    BoxBackgroundColor="#DCEDC8"
+                    IsPassword="True"
+                    PINValue="{Binding PIN1}"
+                    Style="{StaticResource PINViewStyle}"
+                    Color="#33691E" />
+
+
+                <xfpinview:PINView
+                    x:Name="pinView2"
+                    BoxBackgroundColor="#DCEDC8"
+                    IsPassword="False"
+                    PINValue="{Binding PIN2}"
+                    Style="{StaticResource PINViewStyle}"
+                    Color="#33691E" />
+
+
+                <Button
+                    Margin="30,20"
+                    Command="{Binding InputPINProgramaticallyCommand}"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{Binding InputPINButtonText}" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
