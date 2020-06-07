@@ -25,7 +25,7 @@ namespace XFPINView
                nameof(BoxShape),
                typeof(BoxShapeType),
                typeof(PINView),
-                BoxShapeType.RoundCorner,
+                BoxShapeType.Circle,
                defaultBindingMode: BindingMode.OneWay,
                propertyChanged: BoxShapePropertyChanged);
 
