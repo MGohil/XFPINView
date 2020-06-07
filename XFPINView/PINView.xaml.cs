@@ -89,6 +89,7 @@ namespace XFPINView
         public void CreateControl()
         {
             hiddenTextEntry.MaxLength = PINLength;
+            SetInputType(PINInputType);
 
             var count = PINBoxContainer.Children.Count;
 
