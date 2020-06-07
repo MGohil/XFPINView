@@ -40,7 +40,10 @@
                     BoxBackgroundColor="#DCEDC8"
                     Style="{StaticResource PINViewStyle}"
                     Color="#33691E" />
-                <StackLayout Padding="0,20" BackgroundColor="Black">
+                <StackLayout
+                    Margin="0,20,0,0"
+                    Padding="0,20"
+                    BackgroundColor="Black">
                     <Label
                         HorizontalTextAlignment="Center"
                         Text="Dark Theme"

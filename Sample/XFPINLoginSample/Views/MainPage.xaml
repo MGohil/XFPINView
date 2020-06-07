@@ -30,8 +30,11 @@
             Text="Change PIN" />
 
         <Button
+            BackgroundColor="#E5E5FF"
+            BorderColor="Blue"
             Command="{Binding GoToPINSamplesPageCommand}"
             Style="{StaticResource ButtonStyle}"
-            Text="All Samples" />
+            Text="All Samples"
+            TextColor="Blue" />
     </StackLayout>
 </ContentPage>
