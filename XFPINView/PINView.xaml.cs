@@ -49,6 +49,11 @@ namespace XFPINView
         private void HiddenTextEntry_Focused(object sender, FocusEventArgs e)
         {
             var length = PINValue == null ? 0 : PINValue.Length;
+
+            // When textbox is focused, Android brings cursor to the start of value, instead of end
+            // To fix this issue, added this programatic cursor movement to the last when focused
+            hiddenTextEntry.CursorPosition = length;
+
             var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
 
             if (length == PINLength)
