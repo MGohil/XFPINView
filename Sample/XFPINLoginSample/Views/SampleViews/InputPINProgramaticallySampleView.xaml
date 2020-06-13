@@ -6,23 +6,23 @@
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
     <ContentView.Content>
-        <StackLayout Spacing="0">
+        <Frame BorderColor="{StaticResource ColorC}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <StackLayout Spacing="0">
+                <Label BackgroundColor="{StaticResource LightColorC}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Programatically Input PIN" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="From XAML" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="From XAML.cs (Page Backend)" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="From ViewModel via Binding" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Programatically Input PIN" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-
-            <StackLayout Padding="0,20,0,0">
-                <Frame
-                    Margin="20,0"
-                    Padding="15"
-                    BorderColor="DarkGray"
-                    CornerRadius="10"
-                    HasShadow="False">
+                <StackLayout Padding="0,20,0,0" Spacing="30">
                     <StackLayout Orientation="Vertical">
                         <Label
                             Margin="0,0,0,15"
@@ -36,6 +36,8 @@
                         <xfpinview:PINView
                             IsPassword="False"
                             PINValue="123"
+                            BoxBackgroundColor="{StaticResource LightColorC}"
+                            Color="{StaticResource ColorC}"
                             Style="{StaticResource PINViewStyle}" />-->
 
                         <!--<Label
@@ -43,9 +45,11 @@
                             HorizontalTextAlignment="Center"
                             Text="PINValue = 12345" />-->
                         <xfpinview:PINView
+                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="False"
                             PINValue="12345"
-                            Style="{StaticResource PINViewStyle}" />
+                            Style="{StaticResource PINViewStyle}"
+                            Color="{StaticResource ColorC}" />
 
                         <!--<Label
                             Margin="0,15,0,0"
@@ -54,16 +58,13 @@
                         <xfpinview:PINView
                             IsPassword="False"
                             PINValue="12345678"
+                            BoxBackgroundColor="{StaticResource LightColorC}"
+                            Color="{StaticResource ColorC}"
                             Style="{StaticResource PINViewStyle}" />-->
                     </StackLayout>
-                </Frame>
 
-                <Frame
-                    Margin="20,15,20,0"
-                    Padding="15"
-                    BorderColor="DarkGray"
-                    CornerRadius="10"
-                    HasShadow="False">
+                    <BoxView BackgroundColor="{StaticResource SeparatorLineColor}" HeightRequest="1" />
+
                     <StackLayout Orientation="Vertical">
                         <Label
                             Margin="0,0,0,15"
@@ -72,28 +73,27 @@
                         <!--<xfpinview:PINView
                             x:Name="pinView1"
                             IsPassword="False"
+                            BoxBackgroundColor="{StaticResource LightColorC}"
+                            Color="{StaticResource ColorC}"
                             Style="{StaticResource PINViewStyle}" />-->
-
 
                         <xfpinview:PINView
                             x:Name="pinView2"
+                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="False"
-                            Style="{StaticResource PINViewStyle}" />
-
+                            Style="{StaticResource PINViewStyle}"
+                            Color="{StaticResource ColorC}" />
 
                         <!--<xfpinview:PINView
                             x:Name="pinView3"
                             IsPassword="False"
+                            BoxBackgroundColor="{StaticResource LightColorC}"
+                            Color="{StaticResource ColorC}"
                             Style="{StaticResource PINViewStyle}" />-->
                     </StackLayout>
-                </Frame>
 
-                <Frame
-                    Margin="20,15"
-                    Padding="15"
-                    BorderColor="DarkGray"
-                    CornerRadius="10"
-                    HasShadow="False">
+                    <BoxView BackgroundColor="{StaticResource SeparatorLineColor}" HeightRequest="1" />
+
                     <StackLayout>
                         <Label
                             Margin="0,0,0,15"
@@ -101,35 +101,32 @@
                             Text="Property Binding from ViewModel" />
 
                         <xfpinview:PINView
-                            BoxBackgroundColor="#f1f8e9"
+                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="True"
                             PINValue="{Binding PIN1}"
                             Style="{StaticResource PINViewStyle}"
-                            Color="#33691E" />
-
+                            Color="{StaticResource ColorC}" />
 
                         <xfpinview:PINView
-                            BoxBackgroundColor="#f1f8e9"
+                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="False"
                             PINInputType="Numeric"
                             PINValue="{Binding PIN2}"
                             Style="{StaticResource PINViewStyle}"
-                            Color="#33691E" />
-
+                            Color="{StaticResource ColorC}" />
 
                         <Button
                             Margin="30,20"
-                            BackgroundColor="#f1f8e9"
-                            BorderColor="#33691E"
+                            BackgroundColor="{StaticResource LightColorC}"
+                            BorderColor="{StaticResource ColorC}"
                             Command="{Binding InputPINProgramaticallyCommand}"
                             FontSize="Medium"
                             Style="{StaticResource ButtonStyle}"
                             Text="{Binding InputPINButtonText}"
-                            TextColor="#33691E" />
+                            TextColor="{StaticResource ColorC}" />
                     </StackLayout>
-                </Frame>
+                </StackLayout>
             </StackLayout>
-
-        </StackLayout>
+        </Frame>
     </ContentView.Content>
 </ContentView>

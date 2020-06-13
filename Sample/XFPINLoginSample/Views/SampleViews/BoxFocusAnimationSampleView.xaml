@@ -6,46 +6,53 @@
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
     <ContentView.Content>
-        <StackLayout Spacing="0">
+        <Frame BorderColor="{StaticResource ColorD}" Style="{StaticResource SampleViewsContainerFrameStyle}">
 
-            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="BoxFocusAnimation" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Type : Enum [ None, ZoomInOut, ScaleUp ]" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Default : None" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span
-                            FontAttributes="Bold"
-                            FontSize="Small"
-                            Text="Tap on below boxes to see the animation" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            <StackLayout Spacing="0">
 
-            <StackLayout Padding="{StaticResource ContentPadding}">
+                <Label BackgroundColor="{StaticResource LightColorD}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="BoxFocusAnimation" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Enum [ None, ZoomInOut, ScaleUp ]" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : None" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span
+                                FontAttributes="Bold"
+                                FontSize="Small"
+                                Text="Tap on below boxes to see the animation" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-                <Label HorizontalTextAlignment="Center" Text="BoxFocusAnimation = ZoomInOut" />
-                <xfpinview:PINView
-                    x:Name="pinView1"
-                    BoxFocusAnimation="ZoomInOut"
-                    IsPassword="True"
-                    Style="{StaticResource PINViewStyle}" />
+                <StackLayout Padding="{StaticResource ContentPadding}">
+
+                    <Label HorizontalTextAlignment="Center" Text="BoxFocusAnimation = ZoomInOut" />
+                    <xfpinview:PINView
+                        x:Name="pinView1"
+                        BoxBackgroundColor="{StaticResource LightColorD}"
+                        BoxFocusAnimation="ZoomInOut"
+                        IsPassword="True"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorD}" />
 
 
-                <Label HorizontalTextAlignment="Center" Text="BoxFocusAnimation = ScaleUp" />
-                <xfpinview:PINView
-                    x:Name="pinView2"
-                    BoxFocusAnimation="ScaleUp"
-                    BoxSpacing="10"
-                    IsPassword="True"
-                    Style="{StaticResource PINViewStyle}" />
+                    <Label HorizontalTextAlignment="Center" Text="BoxFocusAnimation = ScaleUp" />
+                    <xfpinview:PINView
+                        x:Name="pinView2"
+                        BoxBackgroundColor="{StaticResource LightColorD}"
+                        BoxFocusAnimation="ScaleUp"
+                        BoxSpacing="10"
+                        IsPassword="True"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorD}" />
 
+
+                </StackLayout>
 
             </StackLayout>
-
-        </StackLayout>
+        </Frame>
     </ContentView.Content>
 </ContentView>
