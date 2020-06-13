@@ -26,10 +26,12 @@ namespace XFPINView
 
         private static void ColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            ((PINView)bindable).PINBoxContainer.Children.ForEach(x =>
+            var control = (PINView)bindable;
+
+            control.PINBoxContainer.Children.ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;
-                boxTemplate.SetColor((Color)newValue);
+                boxTemplate.SetColor(color: (Color)newValue, boxBorderColor: control.BoxBorderColor);
             });
         }
     }

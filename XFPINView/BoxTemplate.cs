@@ -7,13 +7,13 @@ namespace XFPINView
     {
         private string _inputChar;
         private Color _color;
-        public FocusAnimationType FocusAnimationType;
+        private Color _boxBorderColor;
+
+        public FocusAnimationType FocusAnimationType { get; set; }
         public Color BoxFocusColor { get; set; }
 
         public Frame Box { get { return this; } }
-
         public Frame Dot { get; } = null;
-
         public Label CharLabel { get; } = null;
 
         public BoxTemplate()
@@ -72,11 +72,13 @@ namespace XFPINView
         /// Sets the Color of Border, Dot, Input CharLabel
         /// </summary>
         /// <param name="color"></param>
-        public void SetColor(Color color)
+        public void SetColor(Color color, Color boxBorderColor)
         {
             _color = color;
+            _boxBorderColor = boxBorderColor;
 
-            BorderColor = color;
+            SetBorderColor();
+
             Dot.BackgroundColor = color;
             CharLabel.TextColor = color;
         }
@@ -172,8 +174,13 @@ namespace XFPINView
         // Removes the focusindication color and set back to original
         public void UnFocusAnimation()
         {
-            BorderColor = _color;
+            SetBorderColor();
             this.ScaleTo(1, 100);
+        }
+
+        private void SetBorderColor()
+        {
+            BorderColor = _boxBorderColor == Color.Default ? _color : _boxBorderColor;
         }
     }
 }

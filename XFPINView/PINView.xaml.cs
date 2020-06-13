@@ -141,7 +141,7 @@ namespace XFPINView
             boxTemplate.BoxFocusColor = BoxFocusColor;
             boxTemplate.FocusAnimationType = BoxFocusAnimation;
             boxTemplate.SecureMode(IsPassword);
-            boxTemplate.SetColor(Color);
+            boxTemplate.SetColor(Color, BoxBorderColor);
             boxTemplate.SetRadius(BoxShape);
 
             if (charValue.HasValue)
