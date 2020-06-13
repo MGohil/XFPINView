@@ -25,6 +25,7 @@
                 <Label HorizontalTextAlignment="Center" Text="Enter exsiting PIN" />
                 <xfpinview:PINView
                     x:Name="existingPINView"
+                    BoxFocusAnimation="ZoomInOut"
                     PINValue="{Binding ExistingPIN}"
                     Style="{StaticResource PINViewStyle}" />
             </StackLayout>
@@ -37,6 +38,7 @@
                 <Label HorizontalTextAlignment="Center" Text="Enter New PIN" />
                 <xfpinview:PINView
                     x:Name="newPINView"
+                    BoxFocusAnimation="ZoomInOut"
                     PINValue="{Binding NewPIN}"
                     Style="{StaticResource PINViewStyle}" />
             </StackLayout>
@@ -50,6 +52,7 @@
                 <xfpinview:PINView
                     x:Name="confirmPINView"
                     AutoDismissKeyboard="True"
+                    BoxFocusAnimation="ZoomInOut"
                     PINValue="{Binding ConfirmPIN}"
                     Style="{StaticResource PINViewStyle}" />
             </StackLayout>

@@ -6,47 +6,59 @@
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
     <ContentView.Content>
-        <StackLayout>
+        <Frame BorderColor="{StaticResource ColorA}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <StackLayout>
 
-            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="PINLength" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Type : Integer" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Default : 4" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+                <Label BackgroundColor="{StaticResource LightColorA}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="PINLength" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Integer" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : 4" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-            <StackLayout Padding="{StaticResource ContentPadding}">
-                <Label HorizontalTextAlignment="Center" Text="PINLength = 4 (Default)" />
-                <xfpinview:PINView
-                    x:Name="pinView1"
-                    BoxBackgroundColor="{DynamicResource PrimaryLightColor}"
-                    BoxShape="Circle"
-                    Color="{DynamicResource PrimaryColor}" />
+                <StackLayout Padding="{StaticResource ContentPadding}">
+                    <Label HorizontalTextAlignment="Center" Text="PINLength = 4 (Default)" />
+                    <xfpinview:PINView
+                        x:Name="pinView1"
+                        BoxBackgroundColor="{DynamicResource LightColorA}"
+                        BoxShape="Circle"
+                        IsPassword="False"
+                        PINValue="1234"
+                        Color="{DynamicResource ColorA}" />
 
-                <Label
-                    Margin="0,20,0,0"
-                    HorizontalTextAlignment="Center"
-                    Text="PINLength = 5" />
-                <xfpinview:PINView
-                    x:Name="pinView2"
-                    PINLength="5"
-                    Style="{StaticResource PINViewStyle}" />
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="PINLength = 5" />
+                    <xfpinview:PINView
+                        x:Name="pinView2"
+                        BoxBackgroundColor="{DynamicResource LightColorA}"
+                        IsPassword="False"
+                        PINLength="5"
+                        PINValue="12345"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{DynamicResource ColorA}" />
 
-                <Label
-                    Margin="0,20,0,0"
-                    HorizontalTextAlignment="Center"
-                    Text="PINLength = 6" />
-                <xfpinview:PINView
-                    x:Name="pinView3"
-                    PINLength="6"
-                    Style="{StaticResource PINViewStyle}" />
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="PINLength = 6" />
+                    <xfpinview:PINView
+                        x:Name="pinView3"
+                        BoxBackgroundColor="{DynamicResource LightColorA}"
+                        IsPassword="False"
+                        PINLength="6"
+                        PINValue="123456"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{DynamicResource ColorA}" />
+                </StackLayout>
+
             </StackLayout>
-
-        </StackLayout>
+        </Frame>
     </ContentView.Content>
 </ContentView>

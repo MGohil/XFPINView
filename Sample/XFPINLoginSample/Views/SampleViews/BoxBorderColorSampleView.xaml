@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
-    x:Class="XFPINLoginSample.Views.SampleViews.AutoDismissKeyboardSampleView"
+    x:Class="XFPINLoginSample.Views.SampleViews.BoxBorderColorSampleView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:system="clr-namespace:System;assembly=netstandard"
@@ -11,40 +11,45 @@
                 <Label BackgroundColor="{StaticResource LightColorB}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="AutoDismissKeyboard" />
+                            <Span Text="BoxBorderColor" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="When set to True, Keyboard will be automatically dismissed when all charecter input entries completed" />
+                            <Span FontSize="Small" Text="Type : Color" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="Type all chars to see this behaviour" />
-                            <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="Type : Boolean" />
-                            <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="Default : False" />
+                            <Span FontSize="Small" Text="Default : Uses value provided in Color Property" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
 
                 <StackLayout Padding="{StaticResource ContentPadding}">
-                    <Label HorizontalTextAlignment="Center" Text="AutoDismissKeyboard = False (Default)" />
+
+                    <Label HorizontalTextAlignment="Center" Text="BoxBorderColor = Transparent" />
                     <xfpinview:PINView
-                        x:Name="pinView1"
-                        AutoDismissKeyboard="False"
                         BoxBackgroundColor="{StaticResource LightColorB}"
-                        Style="{StaticResource PINViewStyle}"
+                        BoxBorderColor="Transparent"
+                        BoxShape="Squere"
+                        IsPassword="True"
+                        PINLength="5"
+                        PINValue="123"
                         Color="{StaticResource ColorB}" />
 
 
                     <Label
-                        Margin="0,20,0,0"
+                        Margin="0,15,0,0"
                         HorizontalTextAlignment="Center"
-                        Text="AutoDismissKeyboard = True" />
+                        Text="BoxBorderColor = Green" />
                     <xfpinview:PINView
-                        x:Name="pinView2"
-                        AutoDismissKeyboard="True"
-                        BoxBackgroundColor="{StaticResource LightColorB}"
-                        Style="{StaticResource PINViewStyle}"
+                        BoxBackgroundColor="Transparent"
+                        BoxBorderColor="Green"
+                        BoxShape="Squere"
+                        IsPassword="True"
+                        PINLength="5"
+                        PINValue="123"
                         Color="{StaticResource ColorB}" />
+
+
+
                 </StackLayout>
+
             </StackLayout>
         </Frame>
     </ContentView.Content>

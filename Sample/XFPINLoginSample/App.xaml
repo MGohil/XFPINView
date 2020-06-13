@@ -23,6 +23,25 @@
         <Color x:Key="TransperantBackgroundColor">#56000000</Color>
         <Color x:Key="SeparatorLineColor">#ececec</Color>
 
+
+        <Color x:Key="ColorA">#33691E</Color>
+        <Color x:Key="LightColorA">#f1f8e9</Color>
+
+        <Color x:Key="ColorB">#BA4A00</Color>
+        <Color x:Key="LightColorB">#f8ece5</Color>
+
+        <Color x:Key="ColorC">#2D1637</Color>
+        <Color x:Key="LightColorC">#eee9f0</Color>
+
+        <Color x:Key="ColorD">#274333</Color>
+        <Color x:Key="LightColorD">#f2fbf6</Color>
+
+        <Color x:Key="ColorE">#FF0000</Color>
+        <Color x:Key="LightColorE">#ffe5e5</Color>
+
+        <Color x:Key="ColorF">#006666</Color>
+        <Color x:Key="LightColorF">#e5ffff</Color>
+
         <Thickness x:Key="ContentPadding">0,20</Thickness>
 
         <!--  Sets the colors of Navigationbar's (Toolbar's) TextColor and Background Color  -->
@@ -69,10 +88,19 @@
         <Style x:Key="SampleViewsHeaderLabelStyle" TargetType="Label">
             <Setter Property="Padding" Value="20" />
             <Setter Property="FontSize" Value="Large" />
-            <Setter Property="TextColor" Value="{DynamicResource PrimaryTintColor}" />
+            <Setter Property="TextColor" Value="Black" />
             <Setter Property="HorizontalTextAlignment" Value="Start" />
             <Setter Property="VerticalTextAlignment" Value="Center" />
-            <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryLightColor}" />
+        </Style>
+
+        <!--  Android : Frame is not clipping the content, So in android, CornerRadius is 0  -->
+        <Style x:Key="SampleViewsContainerFrameStyle" TargetType="Frame">
+            <Setter Property="IsClippedToBounds" Value="True" />
+            <Setter Property="Padding" Value="{OnPlatform Default=0, Android=2}" />
+            <Setter Property="Margin" Value="15,15,15,0" />
+            <Setter Property="CornerRadius" Value="{OnPlatform Default=10, Android=0}" />
+            <Setter Property="HasShadow" Value="False" />
         </Style>
     </Application.Resources>
 </Application>

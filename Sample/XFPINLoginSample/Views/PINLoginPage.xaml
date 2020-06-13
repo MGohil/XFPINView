@@ -20,7 +20,7 @@
 
             <xfpinview:PINView
                 AutoDismissKeyboard="True"
-                IsPassword="True"
+                BoxFocusAnimation="ZoomInOut"
                 PINEntryCompletedCommand="{Binding PINEntryCompletedCommand}"
                 PINValue="{Binding PIN}"
                 Style="{StaticResource PINViewStyle}" />

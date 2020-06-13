@@ -7,9 +7,6 @@ namespace XFPINLoginSample.Views.SampleViews
         public BoxShapeSampleView()
         {
             InitializeComponent();
-            pinViewSquere.PINValue = "123";
-            pinViewCircle.PINValue = "123";
-            pinViewRoundCorner.PINValue = "123";
         }
     }
 }

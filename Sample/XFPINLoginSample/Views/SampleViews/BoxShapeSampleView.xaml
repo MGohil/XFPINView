@@ -6,45 +6,45 @@
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
     <ContentView.Content>
-        <StackLayout>
+        <Frame BorderColor="{StaticResource PrimaryColor}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <StackLayout>
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="BoxShape" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Enum [ Squere, RoundCorner, Circle ]" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : Circle" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="BoxShape" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Type : Enum [ Squere, RoundCorner, Circle ]" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Default : Circle" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+                <StackLayout Padding="{StaticResource ContentPadding}">
+                    <Label HorizontalTextAlignment="Center" Text="BoxShape = Squere" />
+                    <xfpinview:PINView
+                        BoxShape="Squere"
+                        PINValue="123"
+                        Style="{StaticResource PINViewStyle}" />
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxShape = RoundCorner" />
+                    <xfpinview:PINView
+                        BoxShape="RoundCorner"
+                        PINValue="123"
+                        Style="{StaticResource PINViewStyle}" />
 
-            <StackLayout Padding="{StaticResource ContentPadding}">
-                <Label HorizontalTextAlignment="Center" Text="BoxShape = Squere" />
-                <xfpinview:PINView
-                    x:Name="pinViewSquere"
-                    BoxShape="Squere"
-                    Style="{StaticResource PINViewStyle}" />
-
-                <Label
-                    Margin="0,20,0,0"
-                    HorizontalTextAlignment="Center"
-                    Text="BoxShape = RoundCorner" />
-                <xfpinview:PINView
-                    x:Name="pinViewRoundCorner"
-                    BoxShape="RoundCorner"
-                    Style="{StaticResource PINViewStyle}" />
-
-                <Label
-                    Margin="0,20,0,0"
-                    HorizontalTextAlignment="Center"
-                    Text="BoxShape = Circle (Default)" />
-                <xfpinview:PINView
-                    x:Name="pinViewCircle"
-                    BoxShape="Circle"
-                    Style="{StaticResource PINViewStyle}" />
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxShape = Circle (Default)" />
+                    <xfpinview:PINView
+                        BoxShape="Circle"
+                        PINValue="123"
+                        Style="{StaticResource PINViewStyle}" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </Frame>
     </ContentView.Content>
 </ContentView>

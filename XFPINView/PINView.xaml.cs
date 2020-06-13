@@ -49,6 +49,11 @@ namespace XFPINView
         private void HiddenTextEntry_Focused(object sender, FocusEventArgs e)
         {
             var length = PINValue == null ? 0 : PINValue.Length;
+
+            // When textbox is focused, Android brings cursor to the start of value, instead of end
+            // To fix this issue, added this programatic cursor movement to the last when focused
+            hiddenTextEntry.CursorPosition = length;
+
             var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
 
             if (length == PINLength)
@@ -96,10 +101,19 @@ namespace XFPINView
             if (count < PINLength)
             {
                 int newBoxesToAdd = PINLength - count;
+                char[] pinCharsArray = PINValue.ToCharArray();
+
                 for (int i = 1; i <= newBoxesToAdd; i++)
                 {
                     BoxTemplate boxTemplate = CreateBox();
                     PINBoxContainer.Children.Add(boxTemplate);
+
+                    // When we assign PINValue in XAML directly, the Boxes outside the default length (4), will not get any value in it, eventhough we have assigned it in XAML
+                    // To correct this behavior, we have programatically assigned value to those Boxes which are added after the Default Length
+                    if (PINValue.Length >= PINLength)
+                    {
+                        boxTemplate.SetValueWithAnimation(pinCharsArray[Constants.DefaultPINLength + i - 1]);
+                    }
                 }
             }
             else if (count > PINLength)
@@ -116,7 +130,7 @@ namespace XFPINView
         /// Creates the instance of one single PIN box UI
         /// </summary>
         /// <returns></returns>
-        private BoxTemplate CreateBox()
+        private BoxTemplate CreateBox(char? charValue = null)
         {
             BoxTemplate boxTemplate = new BoxTemplate();
             boxTemplate.HeightRequest = BoxSize;
@@ -125,9 +139,15 @@ namespace XFPINView
             boxTemplate.CharLabel.FontSize = BoxSize / 2;
             boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
             boxTemplate.BoxFocusColor = BoxFocusColor;
+            boxTemplate.FocusAnimationType = BoxFocusAnimation;
             boxTemplate.SecureMode(IsPassword);
-            boxTemplate.SetColor(Color);
+            boxTemplate.SetColor(Color, BoxBorderColor);
             boxTemplate.SetRadius(BoxShape);
+
+            if (charValue.HasValue)
+            {
+                boxTemplate.SetValueWithAnimation(charValue.Value);
+            }
 
             return boxTemplate;
         }
@@ -136,7 +156,7 @@ namespace XFPINView
 
         #region Events
         /// <summary>
-        /// Invokes when user type the PIN or text changes in the hidden textbox
+        /// Invokes when user type the PIN, Assignes value to PINValue property or Text changes in the hidden textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -144,16 +164,18 @@ namespace XFPINView
         {
             PINValue = e.NewTextValue;
 
-            if (e.NewTextValue.Length == PINLength)
+            // To have some delay so that till the next execution all assigned values to the properties in XAML gets sets and we get the right value at the time after this delay
+            // Otherwise due to sequence of calls, some properties gets their actual assigned value after the completion of this event
+            // Also To have some delay, before invoking any Action, otherwise, (if) while navigation, it will be quick and you won't see your last entry / or animation.
+            await Task.Delay(200);
+
+            if (e.NewTextValue.Length >= PINLength)
             {
                 // Dismiss the keyboard, once entry is completed up to the defined length and if AutoDismissKeyboard property is true 
                 if (AutoDismissKeyboard == true)
                 {
                     (sender as Entry).Unfocus();
                 }
-
-                // To have some delay, before invoking any Action, otherwise, (if) while navigation, it will be quick and you won't see your last entry.
-                await Task.Delay(200);
 
                 PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
                 PINEntryCompletedCommand?.Execute(PINValue);

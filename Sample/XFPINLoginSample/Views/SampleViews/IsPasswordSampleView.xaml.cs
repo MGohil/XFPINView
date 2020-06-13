@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XFPINLoginSample.Views.SampleViews
 {
@@ -9,8 +7,6 @@ namespace XFPINLoginSample.Views.SampleViews
         public IsPasswordSampleView()
         {
             InitializeComponent();
-            pinView1.PINValue = "12345";
-            pinView2.PINValue = "12345";
         }
     }
 }

@@ -6,50 +6,55 @@
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:xfpinview="clr-namespace:XFPINView;assembly=XFPINView">
     <ContentView.Content>
-        <StackLayout>
+        <Frame BorderColor="{StaticResource ColorE}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <StackLayout>
 
-            <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Color" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Type : Color" />
-                        <Span Text="{x:Static system:Environment.NewLine}" />
-                        <Span FontSize="Small" Text="Default : Color.Accent" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+                <Label BackgroundColor="{StaticResource LightColorE}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Color" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Color" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : Color.Accent" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-            <StackLayout Padding="{StaticResource ContentPadding}">
-                <Label HorizontalTextAlignment="Center" Text="Color = Accent (Default)" />
-                <xfpinview:PINView
-                    x:Name="pinView1"
-                    BoxBackgroundColor="Transparent"
-                    BoxShape="Circle"
-                    PINLength="5" />
+                <StackLayout Padding="{StaticResource ContentPadding}">
+                    <Label HorizontalTextAlignment="Center" Text="Color = Accent (Default)" />
+                    <xfpinview:PINView
+                        x:Name="pinView1"
+                        BoxBackgroundColor="Transparent"
+                        BoxShape="Circle"
+                        PINLength="5"
+                        PINValue="12345" />
 
-                <Label
-                    Margin="0,20,0,0"
-                    HorizontalTextAlignment="Center"
-                    Text="Color = Green" />
-                <xfpinview:PINView
-                    x:Name="pinView2"
-                    BoxBackgroundColor="Transparent"
-                    BoxShape="Circle"
-                    PINLength="5"
-                    Color="Green" />
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="Color = Green" />
+                    <xfpinview:PINView
+                        x:Name="pinView2"
+                        BoxBackgroundColor="Transparent"
+                        BoxShape="Circle"
+                        PINLength="5"
+                        PINValue="12345"
+                        Color="Green" />
 
-                <Label
-                    Margin="0,20,0,0"
-                    HorizontalTextAlignment="Center"
-                    Text="Color = Blue" />
-                <xfpinview:PINView
-                    x:Name="pinView3"
-                    BoxBackgroundColor="Transparent"
-                    BoxShape="Circle"
-                    PINLength="5"
-                    Color="Blue" />
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="Color = Blue" />
+                    <xfpinview:PINView
+                        x:Name="pinView3"
+                        BoxBackgroundColor="Transparent"
+                        BoxShape="Circle"
+                        PINLength="5"
+                        PINValue="12345"
+                        Color="Blue" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </Frame>
     </ContentView.Content>
 </ContentView>
