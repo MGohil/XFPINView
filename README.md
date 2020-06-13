@@ -43,7 +43,9 @@ https://www.nuget.org/packages/XFPINView/
 | ----------| --- | --- | --- |
 | AutoDismissKeyboard | Boolean | False | Decides whether to dismiss the keyboard automatically when all charecters entered |
 | BoxBackgroundColor | Color | Transparent | Defines the BackgroundColor of each PIN Box |
-| BoxFocusColor | Color | Black |Defines the Focus Indicator Border Color when PIN Box is Focused |
+| BoxBorderColor | Color | Color Property Value | Defines the Border Color of each PIN Box |
+| BoxFocusColor | Color | Black | Defines the Focus Indicator Border Color when PIN Box is Focused |
+| BoxFocusAnimation | Enum | None | Animates the Box when it receives the Focus. Enum values [ None, ZoomInOut, ScaleUp ]|
 | BoxShape | Enum | Circle | Defines the shape of PIN Box from Enum values [ Squere, RoundCorner, Circle ] |
 | BoxSize | Double | 50 | Defines the Width and Height of each PIN Box |
 | BoxSpacing | Double | 5 | Defines the space among each PIN Box |
