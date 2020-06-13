@@ -27,7 +27,8 @@
                         x:Name="pinView1"
                         BoxBackgroundColor="Transparent"
                         BoxShape="Circle"
-                        PINLength="5" />
+                        PINLength="5"
+                        PINValue="12345" />
 
                     <Label
                         Margin="0,20,0,0"
@@ -38,6 +39,7 @@
                         BoxBackgroundColor="Transparent"
                         BoxShape="Circle"
                         PINLength="5"
+                        PINValue="12345"
                         Color="Green" />
 
                     <Label
@@ -49,6 +51,7 @@
                         BoxBackgroundColor="Transparent"
                         BoxShape="Circle"
                         PINLength="5"
+                        PINValue="12345"
                         Color="Blue" />
                 </StackLayout>
             </StackLayout>

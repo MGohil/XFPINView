@@ -23,16 +23,16 @@
                 <StackLayout Padding="{StaticResource ContentPadding}">
                     <Label HorizontalTextAlignment="Center" Text="BoxShape = Squere" />
                     <xfpinview:PINView
-                        x:Name="pinViewSquere"
                         BoxShape="Squere"
+                        PINValue="123"
                         Style="{StaticResource PINViewStyle}" />
                     <Label
                         Margin="0,20,0,0"
                         HorizontalTextAlignment="Center"
                         Text="BoxShape = RoundCorner" />
                     <xfpinview:PINView
-                        x:Name="pinViewRoundCorner"
                         BoxShape="RoundCorner"
+                        PINValue="123"
                         Style="{StaticResource PINViewStyle}" />
 
                     <Label
@@ -40,8 +40,8 @@
                         HorizontalTextAlignment="Center"
                         Text="BoxShape = Circle (Default)" />
                     <xfpinview:PINView
-                        x:Name="pinViewCircle"
                         BoxShape="Circle"
+                        PINValue="123"
                         Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
             </StackLayout>

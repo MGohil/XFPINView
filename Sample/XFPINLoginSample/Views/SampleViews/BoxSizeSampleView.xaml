@@ -26,6 +26,7 @@
                         x:Name="pinView1"
                         BoxSize="30"
                         PINLength="4"
+                        PINValue="123"
                         Style="{StaticResource PINViewStyle}" />
 
                     <Label
@@ -36,6 +37,7 @@
                         x:Name="pinView2"
                         BoxSize="50"
                         PINLength="4"
+                        PINValue="123"
                         Style="{StaticResource PINViewStyle}" />
 
                     <Label
@@ -46,6 +48,7 @@
                         x:Name="pinView3"
                         BoxSize="70"
                         PINLength="4"
+                        PINValue="123"
                         Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
             </StackLayout>

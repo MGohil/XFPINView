@@ -26,6 +26,7 @@
                         x:Name="pinView1"
                         BoxBackgroundColor="{StaticResource LightColorA}"
                         PINLength="4"
+                        PINValue="12345"
                         Style="{StaticResource PINViewStyle}"
                         Color="{StaticResource ColorA}" />
 
@@ -38,6 +39,7 @@
                         BoxBackgroundColor="{StaticResource LightColorA}"
                         BoxSpacing="20"
                         PINLength="4"
+                        PINValue="12345"
                         Style="{StaticResource PINViewStyle}"
                         Color="{StaticResource ColorA}" />
 
@@ -50,6 +52,7 @@
                         BoxBackgroundColor="{StaticResource LightColorA}"
                         BoxSpacing="30"
                         PINLength="4"
+                        PINValue="12345"
                         Style="{StaticResource PINViewStyle}"
                         Color="{StaticResource ColorA}" />
                 </StackLayout>

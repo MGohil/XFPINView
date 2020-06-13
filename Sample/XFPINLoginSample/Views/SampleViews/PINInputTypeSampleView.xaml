@@ -29,6 +29,7 @@
                         BoxBackgroundColor="{StaticResource LightColorC}"
                         IsPassword="False"
                         PINInputType="Numeric"
+                        PINValue="12345"
                         Style="{StaticResource PINViewStyle}"
                         Color="{StaticResource ColorC}" />
 
@@ -42,6 +43,7 @@
                         BoxBackgroundColor="{StaticResource LightColorC}"
                         IsPassword="False"
                         PINInputType="AlphaNumeric"
+                        PINValue="ABCDE"
                         Style="{StaticResource PINViewStyle}"
                         Color="{StaticResource ColorC}" />
                 </StackLayout>

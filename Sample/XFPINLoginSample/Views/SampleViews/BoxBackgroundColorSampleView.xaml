@@ -22,7 +22,7 @@
                     </Label.FormattedText>
                 </Label>
 
-                <StackLayout Padding="0,20,0,0">
+                <StackLayout>
                     <Label
                         Margin="0,20,0,0"
                         HorizontalTextAlignment="Center"
