@@ -16,13 +16,14 @@
         <ScrollView>
             <StackLayout Spacing="0">
                 <sampleViews:BoxShapeSampleView />
-                <sampleViews:PINLengthSampleView />
                 <sampleViews:IsPasswordSampleView />
+                <sampleViews:PINLengthSampleView />
                 <sampleViews:PINInputTypeSampleView />
-                <sampleViews:BoxFocusAnimationSampleView />
                 <sampleViews:ColorSampleView />
+                <sampleViews:BoxBorderColorSampleView />
                 <sampleViews:BoxBackgroundColorSampleView />
                 <sampleViews:BoxFocusColorSampleView />
+                <sampleViews:BoxFocusAnimationSampleView />
                 <sampleViews:BoxSizeSampleView />
                 <sampleViews:BoxSpacingSampleView />
                 <sampleViews:AutoDismissKeyboardSampleView />
