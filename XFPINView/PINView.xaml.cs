@@ -130,6 +130,7 @@ namespace XFPINView
             boxTemplate.CharLabel.FontSize = BoxSize / 2;
             boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
             boxTemplate.BoxFocusColor = BoxFocusColor;
+            boxTemplate.FocusAnimationType = BoxFocusAnimation;
             boxTemplate.SecureMode(IsPassword);
             boxTemplate.SetColor(Color);
             boxTemplate.SetRadius(BoxShape);

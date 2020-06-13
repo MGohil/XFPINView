@@ -7,6 +7,7 @@ namespace XFPINView
     {
         private string _inputChar;
         private Color _color;
+        public FocusAnimationType FocusAnimationType;
         public Color BoxFocusColor { get; set; }
 
         public Frame Box { get { return this; } }
@@ -153,15 +154,26 @@ namespace XFPINView
         }
 
         // Sets the focus indication color
-        public void FocusAnimation()
+        public async void FocusAnimation()
         {
             BorderColor = BoxFocusColor;
+
+            if (FocusAnimationType == FocusAnimationType.ZoomInOut)
+            {
+                await this.ScaleTo(1.2, 100);
+                this.ScaleTo(1, 100);
+            }
+            else if (FocusAnimationType == FocusAnimationType.ScaleUp)
+            {
+                this.ScaleTo(1.2, 100);
+            }
         }
 
         // Removes the focusindication color and set back to original
         public void UnFocusAnimation()
         {
             BorderColor = _color;
+            this.ScaleTo(1, 100);
         }
     }
 }
