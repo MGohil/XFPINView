@@ -19,6 +19,7 @@
                 <sampleViews:PINLengthSampleView />
                 <sampleViews:IsPasswordSampleView />
                 <sampleViews:PINInputTypeSampleView />
+                <sampleViews:BoxFocusAnimationSampleView />
                 <sampleViews:ColorSampleView />
                 <sampleViews:BoxBackgroundColorSampleView />
                 <sampleViews:BoxFocusColorSampleView />
