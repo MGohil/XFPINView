@@ -2,6 +2,7 @@
 XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN), OTP, Verification Code entry.
 This control can be used for Login using PIN, Creting New PIN, Change PIN, Entering secure OTP screens in your mobile application.
 
+![](https://github.com/MGohil/XFPINView/blob/master/Arts/xfpinview-showcase.gif)
 
 <kbd>
     <img src="https://github.com/MGohil/XFPINView/blob/master/Arts/Preview-Graphic.png" width="800">
