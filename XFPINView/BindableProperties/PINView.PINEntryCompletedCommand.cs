@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using System.Windows.Input;
 
 namespace XFPINView
 {
@@ -7,16 +8,16 @@ namespace XFPINView
         /// <summary>
         /// A Command to Bind and invoked when PIN Entry is completed
         /// </summary>
-        public Command<string> PINEntryCompletedCommand
+        public ICommand PINEntryCompletedCommand
         {
-            get { return (Command<string>)GetValue(PINEntryCompletedCommandProperty); }
+            get { return (ICommand)GetValue(PINEntryCompletedCommandProperty); }
             set { SetValue(PINEntryCompletedCommandProperty, value); }
         }
 
         public static readonly BindableProperty PINEntryCompletedCommandProperty =
            BindableProperty.Create(
               nameof(PINEntryCompletedCommand),
-              typeof(Command<string>),
+              typeof(ICommand),
               typeof(PINView),
               null);
     }
