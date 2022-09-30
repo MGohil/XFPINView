@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAUIPinView</name>
+    </assembly>
+    <members>
+        <member name="P:MAUIPinView.PINView.AutoDismissKeyboard">
+            <summary>
+            Set true if you want to dismiss the soft keyboard, when PIN entry is completed
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.BoxBackgroundColor">
+            <summary>
+            Gets or Sets the Background color of the PIN Box.
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.BoxBorderColor">
+            <summary>
+            Gets or Sets the Border color of the PIN Box.
+            If you do not set this Property, By default it will use the "Color" property for BoxBorderColor 
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.BoxFocusAnimation">
+            <summary>
+            Gets or Sets the Focus Animation of the PIN Box from FocusAnimationType enum:
+            
+                None (Default),
+                ZoomInOut
+                ScaleUp
+                
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.BoxFocusColor">
+            <summary>
+            Gets or Sets the FocusIndicatorColor of the PIN Boxes.
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.BoxShape">
+            <summary>
+            Gets or Sets the Shape of the PIN Box from BoxShapeType enum:
+            
+                Circle,
+                RoundCorner
+                Squere
+                
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.BoxSize">
+            <summary>
+            Gets or Sets the Height / Width of each PIN Box.
+            Please try to give Even number size to get the proper UI.
+            Please, try to give such size that all PIN boxes fit properly in your device's screen
+            Providing larger size, can shrink the Boxes if there is no more room to fit them on screen
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.BoxSpacing">
+            <summary>
+            Gets or Sets the Space among the PIN Boxes
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.Color">
+            <summary>
+            Gets or Sets the Color of the PIN Boxes.
+            Generally the Color of the Border and Dot inside Box
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.IsPassword">
+            <summary>
+            Set true if you dont want to show input value charecters, false otherwise
+            True will show Dots inside box while typing
+            False will show actual input value
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.PINEntryCompletedCommand">
+            <summary>
+            A Command to Bind and invoked when PIN Entry is completed
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.PINInputType">
+            <summary>
+            Gets or Sets the Input Type (Keyboard Type) of the PIN Box from InputKeyboardType enum:
+            
+                Numeric,
+                AlphaNumeric
+                
+            </summary>
+        </member>
+        <member name="M:MAUIPinView.PINView.SetInputType(MAUIPinView.Helpers.InputKeyboardType)">
+            <summary>
+            Sets the Keyboard Type as per the InputKeyboardType Bindable Property
+            </summary>
+            <param name="inputKeyboardType"></param>
+        </member>
+        <member name="P:MAUIPinView.PINView.PINLength">
+            <summary>
+            Gets or Sets the Length of the PIN.
+            The number of PIN boxes will be layed out based on this Property.
+            </summary>
+        </member>
+        <member name="P:MAUIPinView.PINView.PINValue">
+            <summary>
+            Gets or Sets the PIN value.
+            </summary>
+        </member>
+        <member name="F:MAUIPinView.PINView.boxTapGestureRecognizer">
+            <summary>
+            A TapGuesture Recognizer to invoke when user tap on any PIN box.
+            This will help bring up the soft keyboard
+            </summary>
+        </member>
+        <member name="E:MAUIPinView.PINView.PINEntryCompleted">
+            <summary>
+            An event which is raised/invoked when PIN entry is completed
+            This will help user to execute any code when entry completed
+            </summary>
+        </member>
+        <member name="M:MAUIPinView.PINView.FocusBox">
+            <summary>
+            Calling this, will bring up the soft keyboard, or will help focus the control
+            </summary>
+        </member>
+        <member name="M:MAUIPinView.PINView.CreateControl">
+            <summary>
+            Initializes the UI for the PINView
+            </summary>
+        </member>
+        <member name="M:MAUIPinView.PINView.CreateBox(System.Nullable{System.Char})">
+            <summary>
+            Creates the instance of one single PIN box UI
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MAUIPinView.PINView.PINView_TextChanged(System.Object,Microsoft.Maui.Controls.TextChangedEventArgs)">
+            <summary>
+            Invokes when user type the PIN, Assignes value to PINValue property or Text changes in the hidden textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MAUIPinView.PINView.BoxTapCommandExecute">
+            <summary>
+            Invokes when user tap on the PINView, this will bring up the soft keyboard
+            </summary>
+        </member>
+        <member name="M:MAUIPinView.BoxTemplate.SetColor(Microsoft.Maui.Graphics.Color,Microsoft.Maui.Graphics.Color)">
+            <summary>
+            Sets the Color of Border, Dot, Input CharLabel
+            </summary>
+            <param name="color"></param>
+        </member>
+        <member name="M:MAUIPinView.BoxTemplate.SetRadius(MAUIPinView.Helpers.BoxShapeType)">
+            <summary>
+            Applies the Corner Radius to the PIN Box based on the ShapeType
+            </summary>
+            <param name="boxTemplate"></param>
+            <param name="shapeType"></param>
+        </member>
+        <member name="M:MAUIPinView.BoxTemplate.SecureMode(System.Boolean)">
+            <summary>
+            Method sets the visibility of Input Characters or Dots.
+            IsPassword = True  : Displays Dots
+            IsPassword = False : Displays Chars
+            </summary>
+            <param name="isPassword"></param>
+        </member>
+        <member name="M:MAUIPinView.BoxTemplate.ClearValueWithAnimation">
+            <summary>
+            Clears the input value along with showing the Clear value Animation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MAUIPinView.BoxTemplate.SetValueWithAnimation(System.Char)">
+            <summary>
+            Sets the input value along with showing the Set value animation
+            </summary>
+            <param name="inputChar"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

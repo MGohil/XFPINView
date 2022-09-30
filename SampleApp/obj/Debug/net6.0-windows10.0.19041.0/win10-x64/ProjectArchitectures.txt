@@ -1,0 +1,2 @@
+C:\Repos\Xamarin\Personal\MAUIPinView\MAUIPinView\MAUIPinView.csproj;neutral
+C:\Repos\Xamarin\Personal\MAUIPinView\SampleApp\SampleApp.csproj;x64
