@@ -26,7 +26,6 @@
                 BoxShape="RoundCorner"
                 BoxSize="50"
                 BoxSpacing="10"
-                HeightRequest="60"
                 IsPassword="False"
                 PINInputType="Numeric"
                 PINLength="6"
