@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MAUIPinView</id>
+    <version>1.0.0</version>
+    <authors>MAUIPinView</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0" />
+      <group targetFramework="net6.0-android31.0" />
+      <group targetFramework="net6.0-ios15.4">
+        <dependency id="System.Runtime.InteropServices.NFloat.Internal" version="6.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0-maccatalyst15.4">
+        <dependency id="System.Runtime.InteropServices.NFloat.Internal" version="6.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0-windows10.0.19041" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0\MAUIPinView.dll" target="lib\net6.0\MAUIPinView.dll" />
+    <file src="C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-android\MAUIPinView.dll" target="lib\net6.0-android31.0\MAUIPinView.dll" />
+    <file src="C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-android\MAUIPinView.xml" target="lib\net6.0-android31.0\MAUIPinView.xml" />
+    <file src="C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-ios\MAUIPinView.dll" target="lib\net6.0-ios15.4\MAUIPinView.dll" />
+    <file src="C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-maccatalyst\MAUIPinView.dll" target="lib\net6.0-maccatalyst15.4\MAUIPinView.dll" />
+    <file src="C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-windows10.0.19041.0\MAUIPinView.dll" target="lib\net6.0-windows10.0.19041\MAUIPinView.dll" />
+  </files>
+</package>

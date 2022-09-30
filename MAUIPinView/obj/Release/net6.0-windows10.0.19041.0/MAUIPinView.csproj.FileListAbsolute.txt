@@ -1,0 +1,13 @@
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-windows10.0.19041.0\MAUIPinView.deps.json
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-windows10.0.19041.0\MAUIPinView.dll
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\bin\Release\net6.0-windows10.0.19041.0\MAUIPinView.pdb
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\MAUIPinView.csproj.AssemblyReference.cache
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\MAUIPinView.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\MAUIPinView.AssemblyInfoInputs.cache
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\MAUIPinView.AssemblyInfo.cs
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\MAUIPinView.csproj.CoreCompileInputs.cache
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\XamlC.stamp
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\MAUIPinView.dll
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\refint\MAUIPinView.dll
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\MAUIPinView.pdb
+C:\Repos\Xamarin\Personal\PinView\MAUIPinView\obj\Release\net6.0-windows10.0.19041.0\ref\MAUIPinView.dll

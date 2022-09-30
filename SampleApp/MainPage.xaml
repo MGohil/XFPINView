@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SampleApp.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mauipinview="clr-namespace:MAUIPinView;assembly=MAUIPinView">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Image
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="dotnet_bot.png" />
+
+            <mauipinview:PINView
+                AutoDismissKeyboard="True"
+                BoxBackgroundColor="{StaticResource Gray100}"
+                BoxBorderColor="{StaticResource Primary}"
+                BoxFocusAnimation="ScaleUp"
+                BoxFocusColor="{StaticResource Tertiary}"
+                BoxShape="RoundCorner"
+                BoxSize="50"
+                BoxSpacing="10"
+                HeightRequest="60"
+                IsPassword="False"
+                PINInputType="Numeric"
+                PINLength="6"
+                Color="{StaticResource Black}" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
