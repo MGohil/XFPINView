@@ -1,3 +1,6 @@
+# I do not maintain this Xamarin.Forms library as Xamarin support ended on May 1, 2024 by Microsoft. 
+# Please go for Maui library here: https://github.com/MGohil/PINView.Maui
+
 # XFPINView (Xamarin.Forms UI Control)
 XFPINView is Xamarin.Forms cross platform UI control to facilitate UI for mobile PIN (MPIN), OTP, Verification Code entry.
 This control can be used for Login using PIN, Creting New PIN, Change PIN, Entering secure OTP screens in your mobile application.
